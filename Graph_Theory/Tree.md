@@ -18,53 +18,56 @@ A class of Connected undirected graphs without loops.
 
 ## Include
 
-* Binary tree
-  - Define  
-    A tree in which each node has at most two children, which are referred to as the left child and the right child.
+### Binary tree
 
-  - Property
-    * Traversal of Tree
-      - Depth-First Traversal
-        - Preorder Traversal
-          ```c
-          void traversal(Node* root, vector<Node*> arr) {
-            arr.push_back(root);
-            traversal(root->left);
-            traversal(root->right);
-          }
-          ```
+- Define  
+  A tree in which each node has at most two children, which are referred to as the left child and the right child.
 
-        - Inorder Traversal
-          ```c
-          void traversal(Node* root, vector<Node*> arr) {
-            traversal(root->left);
-            arr.push_back(root);
-            traversal(root->right);
-          }
-          ```
+- Property
+  * Traversal of Tree
+    - Depth-First Traversal
+      - Preorder Traversal
+        ```c
+        void traversal(Node* root, vector<Node*> arr) {
+          arr.push_back(root);
+          traversal(root->left);
+          traversal(root->right);
+        }
+        ```
 
-        - Postorder Traversal
-          ```c
-          void traversal(Node* root, vector<Node*> arr) {
-            traversal(root->left);
-            traversal(root->right);
-            arr.push_back(root);
-          }
-          ```
+      - Inorder Traversal
+        ```c
+        void traversal(Node* root, vector<Node*> arr) {
+          traversal(root->left);
+          arr.push_back(root);
+          traversal(root->right);
+        }
+        ```
 
-      - Breadth-First Traversal: level trversal
+      - Postorder Traversal
+        ```c
+        void traversal(Node* root, vector<Node*> arr) {
+          traversal(root->left);
+          traversal(root->right);
+          arr.push_back(root);
+        }
+        ```
 
-  - Include
-    * Complete Binary Tree
-      - Define  
-        A binary tree in which all leaf nodes have the same height.
+    - Breadth-First Traversal: level trversal
 
-      - Property
-        - Number of nodes with depth $h$: $2^h$  
-          Number of nodes in a complete binary tree with depth $h$: $2^{h+1} - 1$  
-          Number of non leaf nodes: $2^h - 1$  
-          Number of leaf nodes: $2^h$  
+- Include
+  * Complete Binary Tree
+    - Define  
+      A binary tree in which all leaf nodes have the same height.
 
-          - Proof
-            $$\sum_{i=0}^h 2^i = \frac{1 - 2^h}{1 - 2} = 2^h - 1  \tag{geometric sequence summation}$$
+    - Property
+      - Number of nodes with depth $h$: $2^h$  
+        Number of nodes in a complete binary tree with depth $h$: $2^{h+1} - 1$  
+        Number of non leaf nodes: $2^h - 1$  
+        Number of leaf nodes: $2^h$  
+
+        - Proof
+          $$
+          \sum\limits_{i=0}^h 2^i = \frac{1 - 2^h}{1 - 2} = 2^h - 1  \tag{geometric sequence summation}
+          $$
 

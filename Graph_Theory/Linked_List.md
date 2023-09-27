@@ -2,15 +2,25 @@
   - Define  
     Linked List is a directed connected graph in which each node has only one incoming edge, with the exception of the head node $a_1$, which has no incoming edge.
 
-    $$a_1 \to a_2 \to ... \to a_n$$
+    $$
+    a_1 \to a_2 \to ... \to a_n
+    $$
 
     Doubly Linked List: A Doubly Linked List is a type of linked list data structure in which each node has two out-edge, one pointing to the previous node and the other pointing to the next node, with the exception of the head node $a_1$ and tail node $a_n$.   
 
-    $$a_1 \rightleftharpoons a_2 \rightleftharpoons ... \rightleftharpoons a_n$$
-    $$\begin{align*}
+    $$
+    a_1 \rightleftharpoons a_2 \rightleftharpoons ... \rightleftharpoons a_n
+    $$
+    $$
+    \begin{align*}
       a_i[\text{prev}] &= a_{i-1}  \\
       a_{i-1}[\text{next}] &= a_{i}
-    \end{align*}$$
+    \end{align*}
+    $$
+    
+    Circular linked List, is a type of linked list in which the last node of the list points back to the first node, creating a closed loop or circle.
+    
+    <img src="./assets/R.png" alt="img" style="zoom: 33%;" />
 
 
   - Property

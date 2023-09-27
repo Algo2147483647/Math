@@ -29,67 +29,111 @@ $$
 E = \{(v_i, v_j)\ |\ v_i, v_j \in V\}
 $$
 
-## Perperty  
+## Property  
 
-- Degree  
-  Degree of a node refers to the number of edges connecting this node. 
+### Degree  
+Degree of a node refers to the number of edges connecting this node. 
 
-- Representation by Adjasency Matrix  
-  Due to the discreteness of vertices, we can represente the weight of edge $w: E \to \mathbb R$ by Matrix $\boldsymbol G \in \mathbb R^{n \times n}$.
+### Representation by Adjasency Matrix  
+Due to the discreteness of vertices, we can represente the weight of edge $w: E \to \mathbb R$ by Matrix $\boldsymbol G \in \mathbb R^{n \times n}$.
+
+$$
+\boldsymbol G = \left(\begin{matrix} w(v_1, v_1) & \cdots & w(v_1, v_n) \\ \vdots&\ddots &\vdots \\ w(v_n, v_1) & \cdots & w(v_n, v_n) \end{matrix}\right)
+$$
+
+### Connectivity
+
+- Problem: Determine connectivity
+  * Union-Find Sets  
+    Union-Find Sets is a data structure that maintains a collection of disjoint sets, each containing a number of elements. It provides two operations: Union and Find.
+
+    The Union operation takes two elements from different sets and merges them into a single set.  
+    The Find operation is used to determine which set an element belongs to. It takes an element as input and returns a representative element of the set containing that element.  
+
+### Directivity
+
+### Acyclicity
+
+### Euler Path & Euler Graph
+
+- Define  
+  Euler path is a path in a graph that passes through every edge exactly once. If the path starts and ends at the same vertex, it is called an Euler circuit. A graph that has an Euler circuit is called an Eulerian graph, while a graph that has an Euler path but not an Euler circuit is called a semi-Eulerian graph. 
+
+  <img src="./assets/48727417-28c3d500-ec58-11e8-9715-33b168a50b7c.png" alt="theory1" style="zoom:20%;" />
   
+- Property
+  - The existence of an Euler path or circuit in a connected undirected graph depends on the degree of the vertices. For a graph to have an Euler circuit, every vertex must have an even degree. For a connected undirected graph to have an Euler path, exactly two vertices must have an odd degree (all other vertices must have even degree).
+
+- Problem: search Euler Path
+  - Hierholzer's algorithm 
+  
+    ```python
+    def find_eulerian_path_or_cycle(graph):
+        current_vertex = next(iter(graph))
+    
+        stack = [current_vertex]
+        path = []
+    
+        while not stack.empty():
+            if not graph[current_vertex].empty():
+                stack.append(current_vertex)
+                next_vertex = graph[current_vertex].pop()
+               
+                if graph[current_vertex].empty():
+                    del graph[current_vertex]
+                current_vertex = next_vertex
+            else:
+                path.append(current_vertex)
+                current_vertex = stack.pop()
+    
+        if not graph.empty():
+            return None
+        return path
+    ```
+  
+    
+
+### Matching of Graph
+
+- Define  
   $$
-  w(v_i, v_j) \Rightarrow G_{ij}
+  \forall e_i, e_j \in M \subseteq E, e_i \neq e_j \quad\Rightarrow\quad v(e_i, 1) \neq v(e_i, 2) \neq v(e_j, 1) \neq v(e_j, 2)  \tag{Matching}
   $$
+  Matching of a graph is a set of edges $M \subseteq E$ that have no common points between any two edges.
 
-  $$
-  \boldsymbol G = \left(\begin{matrix} w(v_1, v_1) & \cdots & w(v_1, v_n) \\ \vdots&\ddots &\vdots \\ w(v_n, v_1) & \cdots & w(v_n, v_n) \end{matrix}\right)
-  $$
-
-- Connectivity
-  - Problem: Determine connectivity
-    * Union-Find Sets  
-      Union-Find Sets is a data structure that maintains a collection of disjoint sets, each containing a number of elements. It provides two operations: Union and Find.
-
-      The Union operation takes two elements from different sets and merges them into a single set.  
-      The Find operation is used to determine which set an element belongs to. It takes an element as input and returns a representative element of the set containing that element.  
-
-- Directivity
-- Acyclicity
-* Euler Path & Euler Graph
-  - Define  
-    Euler path is a path in a graph that passes through every edge exactly once. If the path starts and ends at the same vertex, it is called an Euler circuit. A graph that has an Euler circuit is called an Eulerian graph, while a graph that has an Euler path but not an Euler circuit is called a semi-Eulerian graph. 
-
-  - Property
-    - The existence of an Euler path or circuit in a connected undirected graph depends on the degree of the vertices. For a graph to have an Euler circuit, every vertex must have an even degree. For a connected undirected graph to have an Euler path, exactly two vertices must have an odd degree (all other vertices must have even degree).
-
-  - Problem: search Euler Path
-    - Hierholzer's algorithm 
-
-* Matching of Graph
-  - Define  
-    $$\forall e_i, e_j \in M \subseteq E, e_i \neq e_j \quad\Rightarrow\quad v(e_i, 1) \neq v(e_i, 2) \neq v(e_j, 1) \neq v(e_j, 2)  \tag{Matching}$$ 
-    Matching of a graph is a set of edges $M \subseteq E$ that have no common points between any two edges.
-
-  - Include
-    - Maximum Matching  
-      $$
-      M^* = \arg\max_{M} \quad \text{number}(M) \tag{Maximum Matching}
-      $$
-      Maximum Matching is a matching with the largest number of matching edges among all matches in a graph.
-    - Perfect Matching  
-      $$
-      V^{(G)} = v(M^*)
-      $$
-      Perfect Matching is a matching that all vertices of the graph are in it.
+- Include
+  - Maximum Matching  
+    $$
+    M^* = \arg\max_{M} \quad \text{number}(M) \tag{Maximum Matching}
+    $$
+    Maximum Matching is a matching with the largest number of matching edges among all matches in a graph.
+  - Perfect Matching  
+    $$
+    V^{(G)} = v(M^*)
+    $$
+    Perfect Matching is a matching that all vertices of the graph are in it.
 
 ## Include
 
 * Complete Graph
   - Define  
     Complete Graph is a undirected graph in which every pair of vertices is adjacent.  
+    
+    <img src="./assets/11-simplex_graph.svg" alt="11-simplex_graph" style="zoom:30%;" />
+  
+  - Property
+  
+    A complete graph containing $n$ vertices,
+  
+    - $number(E) = \frac{n(n-1)}{2}$
+    - The degree of each vertex is $n-1$
+  
 * [Tree](./Tree.md)
+
 * [Directed Acyclic Graph](./Directed_Acyclic_Graph.md)
+
 * [Bipartite Graph](Bipartite_Graph)
+
 * [Linked List](Linked_List.md)
 
 ## Problem
@@ -98,11 +142,53 @@ $$
 
 - Depth-First Search  
   
-  Depth first search is implemented based on stack or recursion.
+  - Define: DFS is a graph traversal that dives as deep as possible into a graph before backtracking.
+  
+  - Algorithm: Depth first search is implemented based on stack or recursion.
+  
+    recursion:
+  
+    ```python
+    def dfs(graph, node, result):
+        if node not in result:
+            result.add(node)
+            for neighbor in graph[node]:
+                dfs(graph, neighbor, result)
+        return result
+    ```
+  
+    stack :
+  
+    ```python
+    def dfs(graph, start):
+        stack.push(start)
+        
+        while not stack.empty():
+            node = stack.pop()
+            result.add(node)
+            for neighbor in graph[node]:
+                stack.push(neighbor)
+        return result
+    ```
   
 - Breadth-First Search
 
-  Breadth-first search is implemented based on queues.
+  - Define: BFS is a graph traversal that explores all of the neighbor nodes at the present depth before moving on to nodes at the next depth level.
+  
+  - Algorithm: Breadth-first search is implemented based on queues.
+  
+    ```python
+    def bfs(graph, start):
+        queue.push(start)
+        
+        while not queue.empty():
+            node = queue.pop()
+            result.add(node)
+            for neighbor in graph[node]:
+                queue.push(neighbor)
+        return result
+    ```
+  
 
 ### Shortest Paths
 
@@ -186,7 +272,7 @@ $$
         M^{(d)}_{i, j, k} = \min \left(M^{(d)}_{i, j, k-1},\ M^{(d)}_{i, k, k-1} + M^{(d)}_{k, j, k-1}\right)
       $$
 
-      ```cpp
+      ```c
       dis = G;
       
       for (int k = 1; k <= N; k++)
@@ -255,14 +341,13 @@ $$
 - Algorithm  
   * Prim's Algorithm  
     Greed by vertices, put the shortest edge $(u,v)$ of $u$ from the searched vertices into the result edge sequence every time, and $v$ does not belong to the searched vertices. $T_{\min, k}$ refers to a sub-tree of $T_{\min}$ with $k+1$ vertices and $k$ edges.
-
     $$
     \begin{align*} 
       T_{\min, 0} &= (\{v_1\}, \emptyset)  \tag{initial}\\
       T_{\min, n} &= T_{\min}  \tag{answer}
     \end{align*}
     $$
-
+  
     $$
     \begin{align*}
       (v_k, e_k) = \arg\min_{e_k = (v_k, v')}\quad & w(e_k)  \\
@@ -274,31 +359,82 @@ $$
     \end{align*}
     $$
     $$T_{\min, k} = T_{\min, k-1} + (\{v_k\}, \{e_k\})$$
-
+  
     - Property: Time complexity $O(E \cdot logV)$
-
+  
+    ```python
+    def prim(graph):
+        start_vertex = list(graph.keys())[0]
+        result = set()
+        visited = set([start_vertex])
+        edges = priority_queue()
+        edges.push(
+            (cost, start_vertex, to)
+            for to, cost in graph[start_vertex].items()
+        )
+    
+        while not edges.empty():
+            cost, frm, to = edges.pop()
+            if to not in visited:
+                visited.add(to)
+                result.add((frm, to))
+                for to_next, cost2 in graph[to].items():
+                    if to_next not in visited:
+                        edges.push((cost2, to, to_next))
+    
+        return result
+    ```
+  
+    
+  
   * Kruskal's Algorithm  
     Greed by edges. $T_{\min, k}$ refers to a sub-tree of $T_{\min}$ with $k$ edges.
-
     $$
     \begin{align*} 
       T_{\min, 0} &= (V^{(G)}, \emptyset)  \tag{initial}\\
       T_{\min, n} &= T_{\min}  \tag{answer}
     \end{align*}
     $$
-
+  
     $$
     \begin{align*}
       e_k =& \arg\min_{e_k \in E^{(G)}}\quad w(e_k)  \\
       &s.t. \quad \nexists \text{ path } \in T_{\min, k-1} \text{ , lets } e_k[1] \to e_k[2]
     \end{align*}
     $$
-
+  
     $$
     T_{\min, k} = T_{\min, k-1} + (\{e_k\})
     $$
-
+  
     - Property: Time complexity $O(E \cdot logV)$
+  
+    Depth first search is implemented based on union-find set.
+  
+    ```python
+    def kruskal(graph):
+        result = []
+        edges = []
+        parent = {}
+    
+        for vertex in graph:
+            parent[vertex] = vertex
+            for neighbor, weight in graph[vertex].items():
+                edges.append((weight, vertex, neighbor))
+    
+        edges.sort()
+    
+        for edge in edges:
+            weight, vertex1, vertex2 = edge
+            root1 = find(parent, vertex1)
+            root2 = find(parent, vertex2)
+    
+            if root1 != root2:
+                result.append(edge)
+                union(parent, root1, root2)
+    
+        return result
+    ```
 
 ### Network Flow Problem
 
@@ -306,8 +442,8 @@ $$
   We set $G'$ is a sub-graph of $G$, Equal inflow and outflow of non source and sink
   $$
   \begin{align*}
-    w'(u, v) \le w(u, v)  \tag{Flow constraint}\\
-    \sum_i w'(u, v_i) = \sum_i w'(v_i, u)  \quad; u \neq s, u \neq e
+    w'(u, v) &\le w(u, v)  \tag{Flow constraint}\\
+    \sum_i w'(u, v_i) &= \sum_i w'(v_i, u)  \quad; u \neq s, u \neq e
   \end{align*}
   $$
 
