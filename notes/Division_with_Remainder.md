@@ -3,6 +3,9 @@
 [TOC]
 
 ## Define    
+
+([Integer_Ring](./Integer_Ring.md))
+
 For $a,b \in \mathbb Z, b \neq 0$, there are unique $q,r\in \mathbb Z, 0 ≤ r < b$ satisfy
 $$
 a = q \times b + r

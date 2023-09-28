@@ -3,7 +3,7 @@
 [TOC]
 
 ## Define
-A stochastic process where the future state depends only on the current state and not on any past states.
+A [stochastic process](./Stochastic_Process.md) where the future state depends only on the current state and not on any past states.
 
 ## Include
 

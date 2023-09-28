@@ -73,7 +73,7 @@ $$
     \end{align*}
     $$
 
-* Moment
+* [Moment](./Moment.md)
 
 - Problem: generation of random number
 * Mersenne Twister 

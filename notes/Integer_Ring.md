@@ -7,7 +7,7 @@ $$
 $$
 \forall a, b \in \mathbb Z, a \cdot b = 0 \quad\Rightarrow\quad  (a = 0 \vee b = 0)  \tag{no zero divisor}
 $$
-Integral ring is a nonzero commutative ring in which the product of any two nonzero elements is nonzero.
+Integral ring is a nonzero commutative [ring](./Ring.md) in which the product of any two nonzero elements is nonzero.
 
 ## Property
 
@@ -38,4 +38,4 @@ Integral ring is a nonzero commutative ring in which the product of any two nonz
         \end{align*}
         $$
 
-    * Möbius Function
+    * [Möbius Function](./Mobius_Function.md)

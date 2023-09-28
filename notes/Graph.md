@@ -132,9 +132,9 @@ $$
 
 * [Directed Acyclic Graph](./Directed_Acyclic_Graph.md)
 
-* [Bipartite Graph](Bipartite_Graph)
+* [Bipartite Graph](./Bipartite_Graph.md)
 
-* [Linked List](Linked_List.md)
+* [Linked List](./Linked_List.md)
 
 ## Problem
 

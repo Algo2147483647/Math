@@ -3,7 +3,7 @@
 [TOC]
 
 ## Define  
-A Measurable Space is a pair $(E, \mathcal E)$, where $E$ is a set and $\mathcal E$ is its $\sigma$-algebra.
+A Measurable Space is a pair $(E, \mathcal E)$, where $E$ is a set and $\mathcal E$ is its [$\sigma$-algebra](./Power_Set.md).
 
 A Measure Space is a pair $(E, \mathcal E, \mu)$, where $E$ is a set and $\mathcal E$ is its $\sigma$-algebra, $\mu$ is a Measure on $(E, \mathcal E)$  
 

@@ -145,4 +145,4 @@ If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we wri
 
 * Ordered Set 
 * [Algebra Structure](./Algebra_Structure.md)
-* Graph
+* [Graph](./Graph.md)

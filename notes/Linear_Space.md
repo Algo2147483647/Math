@@ -6,7 +6,7 @@
 $$
 (\mathbb R, V, +, \cdot)  \tag{Linear Space}
 $$
-Linear Space is non empty set $V$ with addition and scalar multiplication, and satisfying:
+Linear Space is non empty set $V$ with addition and scalar multiplication ([Module](./Algebra_Structure.md)), and satisfying:
 
 |Axiom|Meaning|
 |---|---|

@@ -1,58 +1,60 @@
-import numpy as np
 import os
-import pickle
+import re
+import json
 
 class Cell:
-    def __init__(self, concept, file):
-        self.concept = concept
+    def __init__(self, name, url):
+        self.name = name
+        self.url = url
         self.content = []
-        self.file = file
-        self.kid = []
-        self.parent = []
+        self.kid = set()
+        self.parent = set()
+        
+    def to_dict(self):
+        return {
+            "name": self.name,
+            "url": self.url,
+            "kid": list(self.kid),    # Convert set to list for JSON serialization
+            "parent": list(self.parent)  # Convert set to list
+        }
 
-def readMarkdown(path):
-    root = Cell('', '')
-    cellLib = {"": root}
-    stack = [(root, -2)]
 
-    for file_name in os.listdir(path):
-        with open(path + file_name, 'r', encoding = 'utf-8') as file:
-            content = file.read()
-            content = content.split('\n')
+cellLib = {}
 
-        for s in content:
-            # Tab length
-            tab = len(s) - len(s.lstrip())
+def readMarkdown(file_path):
+    with open(file_path, 'r', encoding='utf-8') as f:
+        file_name = file_path.split("/")[-1].replace(".md", "")
+        if file_name not in cellLib:
+            cellLib[file_name] = Cell(file_name, "./notes/" + file_name + '.md') 
 
-            if(tab == len(s)):
-                continue
+        cellLib[file_name].content = f.read()
 
-            while(tab <= stack[-1][1]):
-                stack.pop()
+        links = re.findall(r'\]\((.*?\.md)\)', cellLib[file_name].content)
+        define_section = re.search(r'##\s*Define(.*?)(## \w+|$)', cellLib[file_name].content, re.DOTALL)
+        define_section = define_section.group(1).strip() if define_section else None
 
-            if(s[tab:tab+2] == "* "):
-                title = s.strip()[2:]
+        
+        for link in links:
+            name_tmp = link.split("/")[-1].replace(".md", "")
+            if name_tmp not in cellLib:
+                cellLib[name_tmp] = Cell(name_tmp, "./notes/" + name_tmp + '.md')
 
-                if (title in cellLib):
-                    newNode = cellLib[title]
-                    if (tab == 0):
-                        newNode.file = file_name
-                else:
-                    newNode = Cell(title, file_name)
-                    cellLib[title] = newNode
-
-                # add kid into tree
-                stack[-1][0].kid.append(newNode)
-                newNode.parent.append(stack[-1][0])
-                # stack push
-                stack.append((newNode, tab))
+            if define_section and link in define_section:
+                cellLib[file_name].parent.add(name_tmp)
+                cellLib[name_tmp].kid.add(file_name)
             else:
-                stack[-1][0].content.append(s)
+                cellLib[file_name].kid.add(name_tmp)
+                cellLib[name_tmp].parent.add(file_name)
 
-    for e in cellLib.values():
-        if (e in root.kid and len(e.parent) != 1):
-            root.kid.remove(e)
-            e.parent.remove(root)
+def readLib(folder_path):
+    for root, _, files in os.walk(folder_path):
+        for file in files:
+            if file.endswith('.md'):
+                file_path = os.path.join(root, file)
+                readMarkdown(file_path)
 
-    with open("html/DAG.pkl", "wb") as f:
-        pickle.dump(cellLib, f)
+    serializable_cellLib = {key: cell.to_dict() for key, cell in cellLib.items()}
+    json_string = json.dumps(serializable_cellLib)
+    with open("cellLib.json", "w") as file:
+        file.write(json_string)
+
