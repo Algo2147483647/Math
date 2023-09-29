@@ -7,7 +7,7 @@
 $$
 T(k \boldsymbol x + l \boldsymbol y) = k(T \boldsymbol x) + l(T \boldsymbol y)
 $$
-Linear Transformation is a mapping $T: V \to V$ for a linear space $V$, $\forall \boldsymbol x \in V$ there is a unique $\boldsymbol y \in V$ corresponding to it, and the linear condition is satisfied.
+Linear Transformation is a [mapping](./Function.md) $T: V \to V$ for a [linear space](./Linear_Space.md) $V$, $\forall \boldsymbol x \in V$ there is a unique $\boldsymbol y \in V$ corresponding to it, and the linear condition is satisfied.
 
 <img src="./assets/transformations-1694683776868-3.svg" alt="transformations-1694683776868-3" style="zoom: 13%;" />
 
@@ -150,97 +150,103 @@ $$
 
 ## Include
 
-* 恒等变换
-  - Define
+### 恒等变换
+
+- Define
+  $$
+  T x = x \quad ;(\forall x \in V)
+  $$
+
+### 零变换
+
+- Define  
+  $$
+  T x = 0 \quad ;(\forall x \in V)
+  $$
+
+### Orthogonal Transformation
+
+- Define
+  $$
+  <x, x> = <T x, T x>
+  $$
+  内积空间中, 保持任意向量的长度不变的线性变换.  
+  正交矩阵:  
+  $$
+    A A^T = I  \\
+    A A^H = I
+  $$
+
+* Rotation Transformation
+  - Define  
+    Rotation Transformation Matrix:  
+
     $$
-    T x = x \quad ;(\forall x \in V)
+    T_{ij} = \left(\begin{matrix}
+      \boldsymbol  I \\ & cos \theta |_{(i,i)}&  & \sin \theta |_{(i,j)} \\ & & \boldsymbol  I \\ & -\sin \theta |_{(j,i)} & & \cos \theta |_{(j,j)} \\ & & & & \boldsymbol  I
+    \end{matrix}\right)
     $$
 
-* 零变换
+    where $\theta$ is the angle of clockwise rotation between dimension $i$ and $j$.
+
+* Reflection Transformation
   - Define  
     $$
-    T x = 0 \quad ;(\forall x \in V)
+    y = H x = (I - 2 e_2 e_2^T) x
     $$
-
-* 正交变换
-  - Define
-    $$
-    <x, x> = <T x, T x>
-    $$
-    内积空间中, 保持任意向量的长度不变的线性变换.  
-    正交矩阵:  
-    $$
-      A A^T = I  \\
-      A A^H = I
-    $$
-
-  * Rotation Transformation
-    - Define  
-      Rotation Transformation Matrix:  
-
+    - Proof  
       $$
-      T_{ij} = \left(\begin{matrix}
-        \boldsymbol  I \\ & cos \theta |_{(i,i)}&  & \sin \theta |_{(i,j)} \\ & & \boldsymbol  I \\ & -\sin \theta |_{(j,i)} & & \cos \theta |_{(j,j)} \\ & & & & \boldsymbol  I
-      \end{matrix}\right)
+      \begin{align*}
+        x - y &= e_2 · (e_2^T x)  \\
+        \Rightarrow y &= (I-2 e_2 e_2^T) x
+      \end{align*}
       $$
 
-      where $\theta$ is the angle of clockwise rotation between dimension $i$ and $j$.
+### Symmetry Transformation
 
-  * Reflection Transformation
-    - Define  
-      $$
-      y = H x = (I - 2 e_2 e_2^T) x
-      $$
-      - Proof  
-        $$
-        \begin{align*}
-          x - y &= e_2 · (e_2^T x)  \\
-          \Rightarrow y &= (I-2 e_2 e_2^T) x
-        \end{align*}
-        $$
+- Define
+  $$
+  <T x, y> = <x, T y>
+  $$
+  Symmetry Matrix:
+  $$
+    A^T = A  \\
+    A^H = A
+  $$
 
-* Symmetry Transformation
-  - Define
+### Projection transformation & Orthogonal Projection transformation
+
+- Define  
+  Projection transformation: 设线性空间的子空间$L$及其补$M$, 投影变换是将线性空间沿$M$到$L$的投影的变换.  
+
+  Projection matrix:  
+  $$
+  P_{L|M} = \left(\begin{matrix} X & 0 \end{matrix}\right) \left(\begin{matrix} X & Y \end{matrix}\right)^{-1}
+  $$
+
+  Orthogonal Projection transformation: 设线性空间的子空间$L$及其正交补$L_\bot$, 将线性空间沿$L_\bot$到$L$的投影的变换, 称Orthogonal projection transformation.  
+
+  Orthogonal Projection matrix:  
+  $$
+    P_L = X(X^H X)^{-1}X^H
+  $$
+    Symbol: $X = (x_1, ... , x_r)$: 投影后子空间的基.
+
+- Property  
+  - $P_{L|M}^2 = P_{L|M}$ 
+  - $P_L (a \boldsymbol x + b \boldsymbol y) = a (P_L \boldsymbol x) + b (P_L \boldsymbol y)$
+  - $x \in L \Leftrightarrow P_L x = x$
+  - $x \in L_\bot \Leftrightarrow P_L x = 0$
+  - if $H$ is a inner product space, and $L$ is a subspace of $H$ with Orthonormal Basis $\{u_1, ...u_n\}$, then the projection of $x \in H$ is
     $$
-    <T x, y> = <x, T y>
-    $$
-    Symmetry Matrix:
-    $$
-      A^T = A  \\
-      A^H = A
+    \hat x = \sum_{i=1}^n \frac{u_i^T x}{u_i^T u_i} u_i
     $$
 
-* Projection transformation & Orthogonal Projection transformation
-  - Define  
-    Projection transformation: 设线性空间的子空间$L$及其补$M$, 投影变换是将线性空间沿$M$到$L$的投影的变换.  
+### 斜切变换
 
-    Projection matrix:  
-    $$
-    P_{L|M} = \left(\begin{matrix} X & 0 \end{matrix}\right) \left(\begin{matrix} X & Y \end{matrix}\right)^{-1}
-    $$
-
-    Orthogonal Projection transformation: 设线性空间的子空间$L$及其正交补$L_\bot$, 将线性空间沿$L_\bot$到$L$的投影的变换, 称Orthogonal projection transformation.  
-
-    Orthogonal Projection matrix:  
-    $$
-      P_L = X(X^H X)^{-1}X^H
-    $$
-      Symbol: $X = (x_1, ... , x_r)$: 投影后子空间的基.
-
-  - Property  
-    - $P_{L|M}^2 = P_{L|M}$ 
-    - $P_L (a \boldsymbol x + b \boldsymbol y) = a (P_L \boldsymbol x) + b (P_L \boldsymbol y)$
-    - $x \in L \Leftrightarrow P_L x = x$
-    - $x \in L_\bot \Leftrightarrow P_L x = 0$
-    - if $H$ is a inner product space, and $L$ is a subspace of $H$ with Orthonormal Basis $\{u_1, ...u_n\}$, then the projection of $x \in H$ is
-      $$
-      \hat x = \sum_{i=1}^n \frac{u_i^T x}{u_i^T u_i} u_i
-      $$
-
-* 斜切变换
-  - Define  
-    斜切变换矩阵:  
-      单位矩阵的第(i,j)个元素改为斜切比率 $a_{ij}$
+- Define  
+  斜切变换矩阵:  
+    单位矩阵的第(i,j)个元素改为斜切比率 $a_{ij}$
 
 * Scale Transformation
   - Define  
