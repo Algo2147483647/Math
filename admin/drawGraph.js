@@ -1,16 +1,36 @@
 let dag = {};
 
+// Load data (assuming it's stored in a file named `dag.json`)
+fetch('./admin/cellLib.json').then(response => response.json()).then(data => {
+    dag = data;
+});
+
 function drawDAG(root) {
+    // init SVG
     const svgContainer = document.getElementById('svg-container');
     while (svgContainer.firstChild) {
         svgContainer.removeChild(svgContainer.firstChild);
     }
-    
-    const position = bfs(root);
+
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svg.setAttribute("width", "10000");
     svg.setAttribute("height", "10000");
     svgContainer.appendChild(svg);
+    
+    // if input root
+    if (root === "") {
+        const virtualRoot = {
+            name: "root",
+            kid: findRoots(),
+            url: "#"
+        };
+
+        dag[virtualRoot.name] = virtualRoot;
+        root = "root";
+    }
+
+    // Graph
+    position = bfs(root);
 
     let elements_num = Array(100).fill(0);
     for (let key in position) {
@@ -25,8 +45,21 @@ function drawDAG(root) {
         value[0] = (value[0] + 1) * 300 - 200;
     }
 
-    const visited = new Set();
-    drawNode(svg, dag[root], position, visited);
+    draw(svg, dag[root], position, new Set());
+
+    if(root === "root") {
+        delete dag[root];
+    }
+}
+
+function findRoots() {
+    const allNodes = new Set(Object.keys(dag));
+    for (let nodeName in dag) {
+        for (let kid of dag[nodeName].kid) {
+            allNodes.delete(kid);
+        }
+    }
+    return Array.from(allNodes);
 }
 
 function bfs(root) {
@@ -53,10 +86,27 @@ function bfs(root) {
     return position;
 }
 
-function drawNode(svg, node, position, visited) {
-    const radius = 8;
-    [x, y] = position[node.name];
+function draw(svg, node, position, visited) {
+    node.kid.forEach(kidName => {
+        const child = dag[kidName];
+        const key = `${node.name}-${kidName}`;
+        if (!visited.has(key)) {
+            visited.add(key);
+            drawEdge(svg, 
+                position[node.name][0], 
+                position[node.name][1], 
+                position[child.name][0], 
+                position[child.name][1]);
+            draw(svg, child, position, visited);
+        }
+    });
 
+    [x, y] = position[node.name];
+    drawNode(svg, x, y, node.name, node.url);
+}
+
+function drawNode(svg, x, y, node_name, node_url) {
+    const radius = 8;
     const circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
     circle.setAttribute("cx", x);
     circle.setAttribute("cy", y);
@@ -70,29 +120,19 @@ function drawNode(svg, node, position, visited) {
     text.setAttribute("y", y + radius / 1.25);
     text.setAttribute("font-family", "Times New Roman");
     text.setAttribute("font-size", "20");
-    text.textContent = node.name;
+    text.textContent = node_name;
 
     const circleLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
     circleLink.setAttribute("href", "javascript:void(0)");  // You can use this to prevent default link action
-    circleLink.addEventListener('click', () => drawDAG(node.name));
+    circleLink.addEventListener('click', () => drawDAG(node_name));
 
     const textLink = document.createElementNS("http://www.w3.org/2000/svg", "a");
-    textLink.setAttribute("href", node.url);
+    textLink.setAttribute("href", node_url);
 
     circleLink.appendChild(circle);
     textLink.appendChild(text);
     svg.appendChild(circleLink);
     svg.appendChild(textLink);
-
-    node.kid.forEach(kidName => {
-        const child = dag[kidName];
-        const key = `${node.name}-${kidName}`;
-        if (!visited.has(key)) {
-            visited.add(key);
-            drawEdge(svg, position[node.name][0] + radius, position[node.name][1], position[child.name][0] - radius, position[child.name][1]);
-            drawNode(svg, child, position, visited);
-        }
-    });
 }
 
 function drawEdge(svg, x1, y1, x2, y2) {
@@ -105,7 +145,4 @@ function drawEdge(svg, x1, y1, x2, y2) {
     svg.appendChild(path);
 }
 
-// Load data (assuming it's stored in a file named `dag.json`)
-fetch('./admin/cellLib.json').then(response => response.json()).then(data => {
-    dag = data;
-});
+
