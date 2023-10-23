@@ -4,7 +4,7 @@
 
 ## Define   
 
-Boolean Algebra is a [Lattice](./Group.md) including value and its operators,
+Boolean Algebra is a [Lattice](./Algebra_Structure.md) including value and its operators,
 $$
 (\{0, 1\}, \neg, \wedge, \vee)
 $$

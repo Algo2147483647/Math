@@ -22,22 +22,28 @@ Ring is an algebraic structure, where $G$ is a set, $\cdot$ and $+$ are binary o
   \end{align*}
   $$
 
+## Property
+
+### Ideal
+
+- Define
+
+- Property
+  - Quotient Ring
+
 ## Include
 
-* Commutative Ring
-  - Define  
-    A Ring satisfying commutative law.
-    $$
-    a \cdot b = b \cdot a \quad; \forall a, b \in G
-    $$
+### Commutative Ring
 
-  - include
-    * Integer Ring
+- Define  
+  A Ring satisfying commutative law.
+  $$
+  a \cdot b = b \cdot a \quad; \forall a, b \in G
+  $$
 
-* Field
-  - Define  
-    Field is a ring that satisfies the existence of multiplicative inverses for every nonzero element. 
+### [Field](./Field.md)
 
-  - Example
-    * Real Field  
-    * Complex Field 
+## Example
+
+- Integral Domain
+

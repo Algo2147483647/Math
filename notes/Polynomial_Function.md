@@ -12,9 +12,9 @@ Polynomial function is a kind of [function](./Function.md).
 
 ## Property
 
-- For a univariate $N$-th degree equation, there is no root-finding formula composed of finite addition, subtraction, multiplication, division, and square root operations from the fifth degree onwards.
+- For a univariate $N$-th degree equation, there is no root-finding formula composed of finite addition, subtraction, multiplication, division, and square root operations $(+, -, \times, /, \sqrt{\ })$ from the fifth degree onwards.
 
-* Fundamental Theorem of Algebra  
+* Fundamental Theorem of Algebra
   Every non-constant single-variable polynomial with complex coefficients has at least one complex root. 
   
   Theorem states the field of complex numbers is algebraically closed.
