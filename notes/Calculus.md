@@ -1,5 +1,8 @@
 [TOC]
+
+
 # $Derivative$
+
 ## Define  
 For unary [functions](./Function.md), the derivative is
 $$
@@ -22,19 +25,25 @@ $$
 \end{align*}
 $$
 
-- Problem : discrete numerical calculation of Derivative
+## Property
 
-    - Algorithm : Finite difference, central difference formulas
-      $$
-      f'(x) = \frac{f(x+Δx) -  f(x-Δx)}{2 Δx} + \epsilon(f,Δx)
-      $$
-      截断误差: $\epsilon(f,Δx) = h² f^{(3)}(c) / 6 = O(h²)$  
-      精度: O(h²)  
-      $$
-      f'(x) = \frac{-f(x+2Δx) + 8·f(x+Δx) - 8·f(x-Δx) + f(x-2Δx) }{12 Δx} + \epsilon(f,Δx)
-      $$
-      截断误差: $\epsilon(f,Δx) = h^4 f^{(5)}(c) / 6 = O(h^4)$  
-      精度: $O(h^4)$  
+- 线性性
+- 乘法法则
+- 链式法则
+
+## Problem : discrete numerical calculation of Derivative
+
+- Algorithm : Finite difference, central difference formulas
+  $$
+  f'(x) = \frac{f(x+Δx) -  f(x-Δx)}{2 Δx} + \epsilon(f,Δx)
+  $$
+  截断误差: $\epsilon(f,Δx) = h² f^{(3)}(c) / 6 = O(h²)$  
+  精度: O(h²)  
+  $$
+  f'(x) = \frac{-f(x+2Δx) + 8·f(x+Δx) - 8·f(x-Δx) + f(x-2Δx) }{12 Δx} + \epsilon(f,Δx)
+  $$
+  截断误差: $\epsilon(f,Δx) = h^4 f^{(5)}(c) / 6 = O(h^4)$  
+  精度: $O(h^4)$  
 
 ## Include
 
@@ -81,28 +90,32 @@ $$
 $$
 Integral $f: (f: \mathbb R \to \mathbb R) \to (f: \mathbb R \to \mathbb R)$ represents the anti-derivative of a function $f(x)$. For a given function $f(x)$, an indefinite integral of $f(x)$ is another function $F(x)$ such that the derivative of $F(x)$ with respect to $x$ is equal to $f(x)$.
 
+
+## Riemann Integra
+
 $$
 \int_a^b f(x) \mathrm d x = F(b) - F(a) \tag{Definite Integral}
 $$
 
 Definite Integral $f: (\mathbb R, \mathbb R, f: \mathbb R \to \mathbb R) \to \mathbb R$ of a function f(x) over an interval $[a, b]$ is the limit of a sum of rectangular areas as the width of the rectangles approaches zero. 
 
-- Problem : discrete numerical calculation of Integral
 
-    - Algorithm : Newton–Cotes formulas
-      $$
-      \int_a^b f(x) \mathrm d x = (b - a) \sum_{k=0}^n  C_k^{n} f(x_i)
-      $$
-      $$
-      C_k^{n} = (-1)^{n-k}(n·k!(n-k)!) \int_0^n \prod_{k≠j} (t-j) \mathrm d t
-      $$
-      $n = 1$: $C = \{\frac{1}{2}, \frac{1}{2}\}$  
-      $n = 2$: $C = \{\frac{1}{6}, \frac{4}{6}, \frac{1}{6}\}$  
-      $n = 4$: $C = \{\frac{7}{90}, \frac{32}{90}, \frac{12}{90}, \frac{32}{90}, \frac{7}{90}\}$   
-      Newton–Cotes formulas 在 $n > 8$ 时不具有稳定性
+## Problem : discrete numerical calculation of Integral
 
-    - Algorithm : 复合求积法  
-      将积分区间分成若干个子区间, 再在每个子区间使用低阶求积公式.
+- Algorithm : Newton–Cotes formulas
+  $$
+  \int_a^b f(x) \mathrm d x = (b - a) \sum_{k=0}^n  C_k^{n} f(x_i)
+  $$
+  $$
+  C_k^{n} = (-1)^{n-k}(n·k!(n-k)!) \int_0^n \prod_{k≠j} (t-j) \mathrm d t
+  $$
+  $n = 1$: $C = \{\frac{1}{2}, \frac{1}{2}\}$  
+  $n = 2$: $C = \{\frac{1}{6}, \frac{4}{6}, \frac{1}{6}\}$  
+  $n = 4$: $C = \{\frac{7}{90}, \frac{32}{90}, \frac{12}{90}, \frac{32}{90}, \frac{7}{90}\}$   
+  Newton–Cotes formulas 在 $n > 8$ 时不具有稳定性
+
+- Algorithm : 复合求积法  
+  将积分区间分成若干个子区间, 再在每个子区间使用低阶求积公式.
 
 # $Differential\ Equation$
 

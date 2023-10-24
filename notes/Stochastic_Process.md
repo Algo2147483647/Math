@@ -70,7 +70,7 @@ A Stochastic Process $X(t, \omega), \omega \in \Omega, t \in T$ is defined as a 
     $$
     \{X_t \ |\ t \in T, (X_{t_1},...,X_{t_k}) \sim \mathcal N(\cdot, \cdot), \forall t_1,...,t_k \in T\}
     $$
-    Gaussian Process is a time continuous stochastic process $\{X_t \ |\ t \in T\}$ such that the romdom vector $(X_{t_1},...,X_{t_k})$ obeys multivariate Gaussian distribution for any finite set of indices $t_1,...,t_k \in T$.
+    Gaussian Process is a time continuous stochastic process $\{X_t \ |\ t \in T\}$ such that the random vector $(X_{t_1},...,X_{t_k})$ obeys multivariate Gaussian distribution for any finite set of indices $t_1,...,t_k \in T$.
 
 * Autoregressive Process
   - Define  
@@ -79,18 +79,6 @@ A Stochastic Process $X(t, \omega), \omega \in \Omega, t \in T$ is defined as a 
     $$
 
     Autoregressive Process is a discrete-time stochastic process in which the current value of a time series variable depends linearly on its past values. Where $p$ is the order of autoregressive process, which means the length of the associated historical value.
-
-* Martingale 
-  - Define  
-    Martingale is a discrete-time stochastic process that satisfies for any time $n$,
-    $$
-    \mathbb E(|X_n|) < \infty
-    $$
-    $$
-    \mathbb E(X_{n+1} \ |\ X_1, ..., X_n) = X_n
-    $$
-
-    The second condition means that the conditional expected value of the next observation, given all the past observations, is equal to the most recent observation.
 
 ## Example
 

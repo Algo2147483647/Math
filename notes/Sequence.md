@@ -14,26 +14,28 @@ $$
 (a_1, a_2, \cdots)  \tag{Infinite sequence}
 $$
 
-A sequence can be defined as a [function](./Funcation.md) from natural numbers (the positions of elements in the sequence) to the elements at each position.
+A sequence $f: \mathbb N \to S$ can be defined as a [function](./Function.md) from natural numbers (the positions of elements in the sequence) to the elements at each position.
 
 ## Property
 
-* Limit 
-  - Define  
-    $$
-    \lim_{n \to \infty} x_n=a \Leftrightarrow |x_n-a|<ε, \forall ε>0, \exists N \in Z_+, n > N  \tag{Limit of Sequence}
-    $$
+### Limitation
 
-  - Property
-    - Uniqueness
-    - Boundedness
-    - 保号性
+- Define  
+  $$
+  \lim_{n \to \infty} x_n=a \Leftrightarrow |x_n-a|<ε, \forall ε>0, \exists N \in Z_+, n > N  \tag{Limit of Sequence}
+  $$
 
-- Convergence of sequence
+- Property
+  - Uniqueness
+  - Boundedness
+  - 保号性
 
-* Subsequence
-  - Define  
-    Subsequence of a sequence $(a_n)$ is $(a_{g(n)})$ where $g : \mathbb N \to \mathbb N$ is strictly increasing.  
+### Convergence of sequence
+
+### Subsequence
+
+- Define  
+  Subsequence of a sequence $(a_n)$ is $(a_{g(n)})$ where $g : \mathbb N \to \mathbb N$ is strictly increasing.  
 
 - Problem 
   * Sort

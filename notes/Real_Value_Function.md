@@ -1,54 +1,68 @@
-* Real-Value Function & Complex-Value Function
-  - Define
-    $$f: \mathbb R \to \mathbb R  \tag{Real-Value Function}$$  
-    $$f: \mathbb C \to \mathbb C  \tag{Complex-Value Function}$$  
+# $Real\ Value\ Function$
 
-  - Property
-    * Function::Limit
-      - Property
-        - Uniqueness
-        - Boundedness
-        - 保号性
-    * Derivative
-    * Integral 
-    * Kolmogorov-Arnold Representation Theorem  
-      $$f(\boldsymbol x) = f(x_1, ..., x_n) = \sum_{q=0}^{2n} \Phi_q\left( \sum_{p=1}^n \phi_{q, p}(x_p) \right)$$
-      Kolmogorov-Arnold representation theorem states that every multivariate continuous function can be represented as a superposition of the two-argument addition of continuous functions of one variable. 
+[TOC]
 
-  - Include
-    * Analytic Function
-      - Define  
-        $$f(z) = \sum_{n=0}^\infty c_n (z - z_0)^n  \tag{Analytic Function}$$
+## Define
 
-        Analytic function $f$ is a complex function on an open set $D$ in the real line if for any $x_0 \in D$, it can be expanded into a power series. Where the coefficients $a_i \in \mathbb R$.
+$$
+f: \mathbb R \to \mathbb R
+$$
 
-    * Holomorphic Function
-      - Define  
-        A holomorphic function is a complex-valued function on an open set $U$ if it is complex differentiable at every point of $U$.
+A complex function $f: \mathbb R \to \mathbb R$ is a [function](./Function.md) from real numbers to real numbers.
 
-      - Property
-        - $$\frac{\partial f}{\partial \bar z} = 0$$
-        * Cauchy-Riemann Equations
-          - Describe  
-            For a complex function $f(z) = u(x,y) + i v(x,y)$, where $u(x,y)$ and $v(x,y)$ are real and imaginary part respectively. 
+## Property
 
-            $$\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y}, \quad \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x} \tag{Cauchy-Riemann Equations}$$
+### Limitation
 
-    * Meromorphic Function
-      - Define  
-        A meromorphic function on an open subset $D$ of the complex plane is a function that is holomorphic on all of $D$ except for a set of isolated points, which are poles of the function.
+- Define
 
-      - Property 
-        * Residue & Residue Theorem
-          - Define
-            $$\operatorname{Res}(f,a)  \tag{Residue}$$
-            $$\oint_C f(z)\,\mathrm{d}z=2\pi i\sum_{k=1}^n \operatorname{Res}(f,a_k)  \tag{Residue Theorem}$$
+for a function $f: R \to R$ defined on some open interval that contains the number $a$, except possibly at $a$ itself. We say that the limit of $f(x)$ as $x$ approaches $a$ is equal to $L$: If and only if for any given positive number $\epsilon > 0$ there exists a number $\delta > 0$ such that whenever $0 < |x- a|< \delta$ (which means $x$ is within $\delta$ units of $a$ but not equal to a), it follows that $| f(a) - L|< \epsilon$.
+$$
+\lim\limits_{x\to a} f(x) = L
+$$
 
-              For an analytic function $f(z)$ on an open set $D$ and a simple closed curve $C$ that encircles counterclockwise all the isolated singularities $a_1,a_2,\ldots,a_n$ of $f(z)$, then the integral of $f(z)$ along $C$ can be expressed as the sum of the residues of $f(z)$ at these singularities.And $\operatorname{Res}(f,a_k)$ denotes the residue of $f(z)$ at the point $a_k$.
+- Property
+  - Uniqueness
+  - Boundedness
+  - 保号性
 
-  - Example 
-    * Polynomial Function 
-    * Trigonometric Function & Hyperbolic Function
+### Derivative
 
-  - Problem
-    * Differential Equation
+- Define
+  $$
+  \begin{align*}
+    \frac{df}{dx} &= \lim_{Δx \to 0}  \frac{ f(x + Δx) - f(x - Δx) }{ 2 Δx }  \tag{First derivative}\\
+    \frac{d^n f}{dx^n} &= \lim_{Δx \to 0} \frac{ f^{(n - 1)}(x + Δx) - f^{(n - 1)}(x - Δx)} { 2 Δx }  \tag{$n$-order derivative}
+  \end{align*}
+  $$
+
+Let $f: \mathbb{R} \to \mathbb{R}$ be a function. The derivative of $f$ at a point $x$ in its domain, if it exists, is given by the limit as mentioned above . If this limit exists, we say that $f$ is differentiable at $x$. The function $f'$ that assigns to each $x$ the value $f'(x)$ (where it exists) is called the derivative of $f$.
+
+### Integral 
+
+- Define
+
+$$
+\int f(x) \mathrm d x  = F(x)  + const. \tag{Integral}
+$$
+Integral $f: (f: \mathbb R \to \mathbb R) \to (f: \mathbb R \to \mathbb R)$ represents the anti-derivative of a function $f(x)$. The indefinite integral of a function $f$ is a family of functions $F$ such that for all $x$ in the domain of $f$, $F'(x) = f(x)$. Where $const.$ is an arbitrary constant, reflecting the fact that the process of differentiation loses constant information.
+
+- Riemann Integra
+
+$$
+\int_a^b f(x) \mathrm d x = F(b) - F(a) \tag{Definite Integral}
+$$
+
+Definite Integral $f: (\mathbb R, \mathbb R, f: \mathbb R \to \mathbb R) \to \mathbb R$ of a function f(x) over an interval $[a, b]$ is the limit of a sum of rectangular areas as the width of the rectangles approaches zero. 
+
+### Kolmogorov-Arnold Representation Theorem  
+
+$$
+f(\boldsymbol x) = f(x_1, ..., x_n) = \sum_{q=0}^{2n} \Phi_q\left( \sum_{p=1}^n \phi_{q, p}(x_p) \right)
+$$
+Kolmogorov-Arnold representation theorem states that every multivariate continuous function can be represented as a superposition of the two-argument addition of continuous functions of one variable. 
+
+
+## Problem
+
+* Differential Equation

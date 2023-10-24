@@ -3,16 +3,20 @@
 [TOC]
 
 ## Define
-$$f(x) = \sum_{i=0}^{4} a_i x^i  \tag{Univariate}$$
+$$
+f(x) = \sum_{i=0}^{4} a_i x^i  \tag{Univariate}
+$$
 
-$$\begin{align*}
+$$
+\begin{align*}
   f(\boldsymbol x) =& \sum_{i_1=1}^{\dim} \sum_{i_2=i_1}^{\dim} \sum_{i_3=i_2}^{\dim} \sum_{i_4=i_3}^{\dim} a_{i_1 i_2 i_3 i_4} · x_{i_1} x_{i_2} x_{i_3} x_{i_4} +    \\
   &\sum_{i_1=1}^{\dim} \sum_{i_2=i_1}^{\dim} \sum_{i_3=i_2}^{\dim} b_{i_1 i_2 i_3} · x_{i_1} x_{i_2} x_{i_3} +    \\
   &\sum_{i_1=1}^{\dim} \sum_{i_2=i_1}^{\dim} c_{i_1 i_2} · x_{i_1} x_{i_2} +    \\
   &\sum_{i_1=0}^{\dim} d_{i_1} x_{i_1} +    \\
   &e  \tag{Multivariate}  \\
   =& \sum_{i_0=0}^{\dim} \sum_{i_1=i_0}^{\dim} \sum_{i_2=i_1}^{\dim} \sum_{i_3=i_2}^{\dim} \sum_{i_4=i_3}^{\dim} a_{i_0 i_1 i_2 i_3 i_4} · x_{i_0} x_{i_1} x_{i_2} x_{i_3} x_{i_4}  \quad, x_0 = 1
-\end{align*}$$
+\end{align*}
+$$
 
 ## Property
 
@@ -22,10 +26,13 @@ $$\begin{align*}
   - Property
     - Solution of Univariate Quartic Equation  
       For an Univariate Quartic Equation,
-      $$a x^4 + b x^3 + c x^2 + d x + e = 0$$
+      $$
+      a x^4 + b x^3 + c x^2 + d x + e = 0
+      $$
 
       The solutions are $r_1, r_2, r_3, r_4$,
-      $$\begin{align*}
+      $$
+      \begin{align*}
         r_{i} &= -\frac{b}{4 a} - S \pm \frac{1}{2} \sqrt{-4 S^2 -2 p \pm \frac{q}{S}}  \\
         p & =\frac{8 a c-3 b^2}{8 a^2} \\
         q & =\frac{b^3-4 a b c+8 a^2 d}{8 a^3} \\
@@ -33,10 +40,12 @@ $$\begin{align*}
         Q & =\sqrt[3]{\frac{\Delta_1+\sqrt{\Delta_1^2-4 \Delta_0^3}}{2}} \\
         \Delta_0 & =c^2-3 b d+12 a e \\
         \Delta_1 & =2 c^3-9 b c d+27 b^2 e+27 a d^2-72 a c e
-      \end{align*}$$
+      \end{align*}
+      $$
 
       Or representation by
-      $$\begin{align*}
+      $$
+      \begin{align*}
         Q_1 &= c^2 - 3bd + 12e  \\
         Q_2 &= 2c^3 - 9bcd + 27d^2 + 27b^2e - 72ce  \\
         Q_3 &= 8bc - 16d - 2b^3  \\
@@ -48,20 +57,25 @@ $$\begin{align*}
         x_2 &= \frac{-b - Q_7 + \sqrt{4\left(\frac{Q_4}{6} - Q_6 - \frac{Q_3}{Q_7}\right)}}{4} \\
         x_3 &= \frac{-b + Q_7 - \sqrt{4\left(\frac{Q_4}{6} - Q_6 + \frac{Q_3}{Q_7}\right)}}{4} \\
         x_4 &= \frac{-b + Q_7 + \sqrt{4\left(\frac{Q_4}{6} - Q_6 + \frac{Q_3}{Q_7}\right)}}{4}
-      \end{align*}$$
+      \end{align*}
+      $$
 
 ## Include
 
 ### Torus
 
 - Define  
-  $$\{\boldsymbol x \ |\ (R^2 - r^2 + \boldsymbol x^T \boldsymbol x)^2 - 4 R^2 (\boldsymbol x^T \boldsymbol x - x_i^2) = 0\}  \tag{Torus}$$  
+  $$
+  \{\boldsymbol x \ |\ (R^2 - r^2 + \boldsymbol x^T \boldsymbol x)^2 - 4 R^2 (\boldsymbol x^T \boldsymbol x - x_i^2) = 0\}  \tag{Torus}
+  $$
   
   <img src="./assets/torus-84d2651b-f18b-462b-be8c-436c8ae4c54-resize-750.gif" alt="img" style="zoom: 50%;" />
 
 ### Tanglecube
 
 - Define
-  $$\left\{\boldsymbol x \ |\ \sum_{i=1}^3 \left(x_i^4 - 5 x_i^2 \right) + 11.8 = 0 \right\}  \tag{Tanglecube}$$   
+  $$
+  \left\{\boldsymbol x \ |\ \sum_{i=1}^3 \left(x_i^4 - 5 x_i^2 \right) + 11.8 = 0 \right\}  \tag{Tanglecube}
+  $$
   
   <img src="./assets/Tanglecube1_700.svg" alt="Tanglecube1_700" style="zoom:67%;" />
