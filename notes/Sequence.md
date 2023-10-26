@@ -30,6 +30,16 @@ A sequence $f: \mathbb N \to S$ can be defined as a [function](./Function.md) fr
   - Boundedness
   - 保号性
 
+### Series
+
+- Define
+
+  A series refers to the sum of the terms of a sequence. Given a sequence $a_n$, the series $S$ is given by:
+  $$
+  S = \sum_{i=0}^\infty a_i  \\
+  S_n = \sum_{i=0}^n a_i
+  $$
+
 ### Convergence of sequence
 
 ### Subsequence
