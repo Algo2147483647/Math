@@ -33,6 +33,11 @@ $$
 
 ## Property
 
+- Euler's formula
+  $$
+  e^{i \pi} + 1 = 0
+  $$
+  
 - Trigonometric functions are periodic functions. The period of $\sin(\cdot), \cos(\cdot)$ is $2 k \pi$, period of $\tan(\cdot)$ is $k \pi$, $k \in \mathbb Z$,
   $$
   \begin{align*}

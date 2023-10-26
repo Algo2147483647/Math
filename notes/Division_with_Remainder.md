@@ -2,7 +2,7 @@
 
 [TOC]
 
-## Define    
+## Define
 
 ([Integer_Ring](./Integer_Ring.md))
 
@@ -40,7 +40,9 @@ $$
 - Inverse element
   $(a · c) % b = 1$, 则$c$是$a$在$mod\ b$下的逆元$a^{-1}$
 
-* [Prime](./Prime.md)
+### [Prime](./Prime.md)
+
+
 
 ## Problem
 

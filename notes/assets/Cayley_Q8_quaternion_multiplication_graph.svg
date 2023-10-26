@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="100%" height="100%" viewBox="-190 -170 384 384">
+ <title>Cayley Q8 quaternion multiplication graph</title>
+ <desc>Cayley Q8 graph showing cycles of multiplication by quaternions '''i''' (red), '''j''' (green) and '''k''' (blue) by CMG Lee. In the SVG file, hover over or click a cycle to highlight it.</desc>
+ <style type="text/css">
+.main { font-family:Times,Times New Roman,serif; font-size:36px; text-anchor:middle; fill:#000000; stroke:none; stroke-linejoin:round; }
+.main:hover            { fill-opacity:0.1; stroke-opacity:0.1; }
+.active:hover, .nofade { fill-opacity:1.0; stroke-opacity:1.0; }
+.active:focus          { fill-opacity:0.8; stroke-opacity:0.8; outouter:none; }
+.vec { font-weight:bold; }
+.i   { fill:#990000; stroke:#990000; stroke-width:3; }
+.j   { fill:#009900; stroke:#00cc00; stroke-width:2; }
+.k   { fill:#0000cc; stroke:#0000ff; stroke-width:1; }
+.nop { pointer-events:none; }
+text { stroke:none; }
+ </style>
+ <defs>
+  <filter id="filter_blur"><feGaussianBlur stdDeviation="4"/></filter>
+  <radialGradient id="grad_sphere" cx="50%" cy="50%" r="50%" fx="50%" fy="90%">
+   <stop offset="0%"  stop-color="#000000" stop-opacity="0"/>
+   <stop offset="99%" stop-color="#000000" stop-opacity="0.3"/>
+  </radialGradient>
+  <linearGradient id="grad_highlight" x1="0%" y1="0%" x2="0%" y2="100%">
+   <stop offset="10%" stop-color="#ffffff" stop-opacity="0.9"/>
+   <stop offset="99%" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <g id="orb" stroke="none">
+   <circle  cx="0" cy="0" r="100"/>
+   <circle  cx="0" cy="0" r="100" fill="url(#grad_sphere)"/>
+   <ellipse cx="0" cy="-45" rx="70" ry="50" fill="url(#grad_highlight)" filter="url(#filter_blur)"/>
+  </g>
+  <linearGradient id="grad_fade" x1="0%" x2="0%" y1="0%" y2="100%">
+   <stop offset="0%"   stop-color="#ffffff" stop-opacity="0"/>
+   <stop offset="30%"  stop-color="#ffffff" stop-opacity="1"/>
+   <stop offset="70%"  stop-color="#ffffff" stop-opacity="1"/>
+   <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+  </linearGradient>
+  <g id="orb_i"><use xlink:href="#orb" transform="scale(0.25)" fill="#ffcccc"/></g>
+  <g id="orb_j"><use xlink:href="#orb" transform="scale(0.25)" fill="#ccff99"/></g>
+  <g id="orb_k"><use xlink:href="#orb" transform="scale(0.25)" fill="#99ccff"/></g>
+  <g id="orb_1"><use xlink:href="#orb" transform="scale(0.25)" fill="#cccccc"/></g>
+  <path id="arrowhead" d="M -7,4 L 0,0 L -7,-4" stroke-linecap="round"/>
+  <circle id="inner_common" cx="-30" cy="0" r="100"/>
+  <g id="inner" fill="none">
+   <use xlink:href="#inner_common" stroke-width="20" opacity="0"/>
+   <use xlink:href="#inner_common"/>
+   <use xlink:href="#arrowhead" transform="translate(   0, -95) rotate( 20)"/>
+   <use xlink:href="#arrowhead" transform="translate(  69,  15) rotate( 95)"/>
+   <use xlink:href="#arrowhead" transform="translate(   0,  95) rotate(165)"/>
+   <use xlink:href="#arrowhead" transform="translate(-110,  60) rotate(230)"/>
+   <use xlink:href="#arrowhead" transform="translate(-110, -60) rotate(305)"/>
+  </g>
+  <g id="outer" fill="none" stroke-dasharray="7,2">
+   <rect x="-140" y="-5" width="220" height="10" fill="url(#grad_fade)" stroke="none"/>
+   <path d="M -160,0 Q -180,0 -179,-19 A 180,180 0 0 1 179,-19 Q 180,0 160,0 Z"/>
+   <use xlink:href="#arrowhead" transform="translate( 160,   0)"/>
+   <use xlink:href="#arrowhead" transform="translate(  50,   0)"/>
+   <use xlink:href="#arrowhead" transform="translate( -35,   0)"/>
+   <use xlink:href="#arrowhead" transform="translate(-110,   0)"/>
+   <use xlink:href="#arrowhead" transform="translate(-130,-125) rotate(140)"/>
+   <use xlink:href="#arrowhead" transform="translate( 130,-125) rotate(230)"/>
+  </g>
+  <g id="one" class="one nop" fill="#000000">
+   <g transform="translate(   0, 180)"><use xlink:href="#orb_1"/><text x="-0.1ex" y="0.6ex"><tspan>&#8722;</tspan><tspan dx="-0.2ex">1</tspan></text></g>
+   <g transform="translate(   0,   0)"><use xlink:href="#orb_1"/><text y="0.6ex">1</text></g>
+  </g>
+  <g id="i" class="i nop">
+   <g transform="translate( -80,   0)"><use xlink:href="#orb_i"/><text x="-0.2ex" y="0.6ex"><tspan>&#8722;</tspan><tspan class="vec">i</tspan></text></g>
+   <g transform="translate( 112,   0)"><use xlink:href="#orb_i"/><text x="-0.0ex" y="0.6ex" class="vec">i</text></g>
+  </g>
+  <g id="j" class="j nop">
+   <g transform="translate(  40,  70)"><use xlink:href="#orb_j"/><text x="-0.2ex" y="0.5ex"><tspan>&#8722;</tspan><tspan class="vec">j</tspan></text></g>
+   <g transform="translate( -56, -98)"><use xlink:href="#orb_j"/><text x="-0.0ex" y="0.5ex" class="vec">j</text></g>
+  </g>
+  <g id="k" class="k nop">
+   <g transform="translate(  40, -70)"><use xlink:href="#orb_k"/><text x="-0.1ex" y="0.6ex"><tspan>&#8722;</tspan><tspan class="vec">k</tspan></text></g>
+   <g transform="translate( -56,  98)"><use xlink:href="#orb_k"/><text x="-0.0ex" y="0.6ex" class="vec">k</text></g>
+  </g>
+  <g id="xi" class="i nop"><text transform="translate(-152, -20)" y="0.6ex"><tspan>&#215;</tspan><tspan class="vec">i</tspan></text></g>
+  <g id="xj" class="j nop"><text transform="translate(  92, 118)" y="0.6ex"><tspan>&#215;</tspan><tspan class="vec">j</tspan></text></g>
+  <g id="xk" class="k nop"><text transform="translate(  95,-118)" y="0.6ex"><tspan>&#215;</tspan><tspan class="vec">k</tspan></text></g>
+ </defs>
+ <circle cx="0" cy="0" r="99999" fill="#ffffff"/>
+ <g class="main">
+  <circle cx="0" cy="0" r="182" fill="#ffffff"/>
+  <a class="active i" xlink:href="#">
+   <use xlink:href="#inner"/>
+   <use xlink:href="#xi"/>
+   <use xlink:href="#j"/>
+   <use xlink:href="#k"/>
+  </a>
+  <a class="active j" xlink:href="#">
+   <use xlink:href="#inner" transform="rotate(240)"/>
+   <use xlink:href="#i"/>
+   <use xlink:href="#xj"/>
+   <use xlink:href="#k"/>
+  </a>
+  <a class="active k" xlink:href="#">
+   <use xlink:href="#inner" transform="rotate(120)"/>
+   <use xlink:href="#i"/>
+   <use xlink:href="#xk"/>
+   <use xlink:href="#j"/>
+  </a>
+  <a class="active i" xlink:href="#">
+   <use xlink:href="#outer" transform="scale(1,-1)"/>
+   <use xlink:href="#one"/>
+   <use xlink:href="#i"/>
+   <use xlink:href="#xi"/>
+  </a>
+  <a class="active j" xlink:href="#">
+   <use xlink:href="#outer" transform="rotate(240) scale(1.03)"/>
+   <use xlink:href="#one"/>
+   <use xlink:href="#j"/>
+   <use xlink:href="#xj"/>
+  </a>
+  <a class="active k" xlink:href="#">
+   <use xlink:href="#outer" transform="rotate(120) scale(1.06)"/>
+   <use xlink:href="#one"/>
+   <use xlink:href="#k"/>
+   <use xlink:href="#xk"/>
+  </a>
+ </g>
+</svg>

@@ -35,21 +35,32 @@ $$
 k \boldsymbol A_{m \times n} = (k a_{ij})_{m \times n}  \tag{scalar multiplication}
 $$
 
-## Concept
+## Property
 
-### Vector
+### Representation
+
+#### Vector
 
 - Define
   $$
   \mathbb R^{n}, n \in \mathbb Z
   $$
+  A vector is a one-dimensional array of numbers. It can be represented as a row or a column.
 
-### Matrix 
+#### Matrix 
 
 - Define
   $$
   \mathbb R^{m \times n}, m, n \in \mathbb Z
   $$
+  
+  $$
+  \boldsymbol A = \left(\begin{matrix} a_{11} & \cdots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{m1} & \cdots & a_{mn} \end{matrix}\right)
+  $$
+  
+  
+  
+  A matrix is a two-dimensional array of numbers, symbols, or expressions, arranged in rows and columns.
   
 - Operation
   - multiplication
@@ -73,7 +84,7 @@ $$
   - Algorithm: computer matrix multiplication
     * General Matrix Multiplication
 
-## Property
+
 
 ### Linear Independence & Linear Dependence
 

@@ -12,6 +12,10 @@ A complex function $f: \mathbb C \to \mathbb C$ is a [function](./Function.md) f
 
 ## Property
 
+- Differentiability: Holomorphic functions (or analytic functions) are differentiable everywhere within their domain of definition. For complex functions, holomorphism and analyticity are equivalent. 
+
+  Let $U$ be an open set in the complex plane $\mathbb C$ and let $f : U \to \mathbb C$ be a function. The function ,is said to be analytic (or holomorphic) on $U$ if for every $z_0 \in U$, there exists an open disk $D$ centered at $z_0$ such that $f$ is differentiable at every point in $D$.
+
 ## Include
 
 ### Analytic Function
@@ -20,7 +24,7 @@ A complex function $f: \mathbb C \to \mathbb C$ is a [function](./Function.md) f
   $$
   f(z) = \sum_{n=0}^\infty c_n (z - z_0)^n  \tag{Analytic Function}
   $$
-
+  
   Analytic function $f$ is a complex function on an open set $D$ in the real line if for any $x_0 \in D$, it can be expanded into a power series. Where the coefficients $a_i \in \mathbb R$.
 
 ### Holomorphic Function
@@ -29,9 +33,13 @@ A complex function $f: \mathbb C \to \mathbb C$ is a [function](./Function.md) f
   A holomorphic function is a complex-valued function on an open set $U$ if it is complex differentiable at every point of $U$.
 
 - Property
+  
+  - Holomorphic functions are differentiable everywhere within their domain of definition.
+  
   - $$
     \frac{\partial f}{\partial \bar z} = 0
     $$
+  
   * Cauchy-Riemann Equations
     
     For a complex function $f(z) = u(x,y) + i v(x,y)$ to be differentiable (and hence analytic) at a point, where $u(x,y)$ and $v(x,y)$ are real and imaginary part respectively, the partial derivatives of $u, v$ must satisfy the Cauchy-Riemann equations at that point:
