@@ -48,116 +48,124 @@ $$
 
 ## Property
 
-- Range 
-  $$
-  Range(T)=\{T x | x \in V\}
-  $$
-  In linear space,  
-  the set of results of all vectors after linear transformation;   
-  the linear space after linear transformation.
+### Range 
 
-  - Rank
-    $$
-    rank(A) = \dim Range(A) = \dim Range(A^T)
-    $$
-    The dimension of space after transformation.
-    The dimension of the range.
+$$
+Range(T)=\{T x | x \in V\}
+$$
+In linear space,  
+the set of results of all vectors after linear transformation;   
+the linear space after linear transformation.
 
-- Null Space
+- Rank
   $$
-  Null(T) = \{x | T x = 0\}
+  rank(A) = \dim Range(A) = \dim Range(A^T)
   $$
-  In linear space, the set of all original vectors that are linearly transformed into zero vectors.
+  The dimension of space after transformation.
+  The dimension of the range.
+
+### Null Space
+
+$$
+Null(T) = \{x | T x = 0\}
+$$
+In linear space, the set of all original vectors that are linearly transformed into zero vectors.
 
 - $\dim V = \dim Range(A) + \dim Null(A)$  
   变换前线性空间维数 = 值域维数 + 零空间维数. 
 
-- Invariant Subspace
+
+### Invariant Subspace
+
+$$
+\forall x \in V_1, V_1 \subseteq V, T x \in V_1
+$$
+
+### Eigenvalues & Eigenvectors
+
+- Define
   $$
-  \forall x \in V_1, V_1 \subseteq V, T x \in V_1
+  \boldsymbol A \boldsymbol x = λ \boldsymbol x
   $$
+  
+  - $x$: Eigenvectors, a vector whose direction does not change before and after linear transformation;  
+  - $λ$: Eigenvalues, proportion of length change of eigenvector after linear transformation.
 
-* Eigenvalues & Eigenvectors
-  - Define
+- Property
+  * Eigenvalue Decomposition & Singular Value Decomposition
+  
+  - Characteristic polynomial
     $$
-    \boldsymbol A \boldsymbol x = λ \boldsymbol x
-    $$
-    
-    - $x$: Eigenvectors, a vector whose direction does not change before and after linear transformation;  
-    - $λ$: Eigenvalues, proportion of length change of eigenvector after linear transformation.
-
-  - Property
-    * Eigenvalue Decomposition & Singular Value Decomposition
-    
-    - Characteristic polynomial
-      $$
-      \varphi(λ) = |λ I - A| = λ^n + a_1 λ^{n-1} + ... + a_{n-1} λ + a_n
-      $$
-
-    - Theorem -- Hamilton-Cayley Theorem
-      $$
-      \varphi(A) = A^n + a_1 A^{n-1}+ ... +a_{n-1} A + a_n I = 0
-      $$
-      Matrix is the root of its characteristic polynomial.
-
-* Moore-Penrose Inverse
-  - Define  
-    The solution satisfying the following equation,
-    $$
-      \left\{\begin{matrix}
-        A X A = A\\
-        X A X = X\\
-        (A X)^H = A X\\
-        (X A)^H = A X\\
-      \end{matrix}\right.
-    $$
-    When the rank of cols is full, $A^+ = (A^H A)^{-1} A^H$   
-    When the rank of rows is full,  $A^+ = A^H (A A^H)^{-1}$
-
-  - Property
-    - $rank(A) = rank(A^H A) = rank(A A^H)$
-    - 满秩分解算广义逆 $A^+ = G^H (F^H A G^H)^{-1} F^H$
-
-* Similarity
-  - Define  
-    $A$ is similar to $B$, $A ~ B$:
-    $$
-    \exists \text{Nonsingular Matrix}P \Rightarrow B = P^{-1} A P
+    \varphi(λ) = |λ I - A| = λ^n + a_1 λ^{n-1} + ... + a_{n-1} λ + a_n
     $$
 
-  - Property 
-    - $A ~ A$ 
-    - $A ~ B \Leftrightarrow B ~ A$ 
-    - $A ~ B, B ~ C \Leftrightarrow A ~ C$
-    - The eigenvalues and eigenvectors of similar matrices are the same.
-    - The trace of similar matrix is the same.
+  - Theorem -- Hamilton-Cayley Theorem
+    $$
+    \varphi(A) = A^n + a_1 A^{n-1}+ ... +a_{n-1} A + a_n I = 0
+    $$
+    Matrix is the root of its characteristic polynomial.
 
-- Transformation of linear transformation matrix under different bases
+### Moore-Penrose Inverse
+
+- Define  
+  The solution satisfying the following equation,
   $$
-  A_Y = C^{-1} A_X C \quad ; Y = C X
+    \left\{\begin{matrix}
+      A X A = A\\
+      X A X = X\\
+      (A X)^H = A X\\
+      (X A)^H = A X\\
+    \end{matrix}\right.
+  $$
+  When the rank of cols is full, $A^+ = (A^H A)^{-1} A^H$   
+  When the rank of rows is full,  $A^+ = A^H (A A^H)^{-1}$
+
+- Property
+  - $rank(A) = rank(A^H A) = rank(A A^H)$
+  - 满秩分解算广义逆 $A^+ = G^H (F^H A G^H)^{-1} F^H$
+
+### Similarity
+
+- Define  
+  $A$ is similar to $B$, $A ~ B$:
+  $$
+  \exists \text{Nonsingular Matrix}P \Rightarrow B = P^{-1} A P
   $$
 
-  - Proof
-    $$
-    \begin{align*}
-      T Y &= Y A_Y     \tag{Define}\\ 
-      T X C &= X C A_Y   \tag{$ Y = X C $}\\
-      X A_X C &= X C A_Y   \tag{$ T X = X A_X $}\\
-      A_X C &= C A_Y  \\
-      A_Y &= C^{-1} A_X C
-    \end{align*}
-    $$
+- Property 
+  - $A ~ A$ 
+  - $A ~ B \Leftrightarrow B ~ A$ 
+  - $A ~ B, B ~ C \Leftrightarrow A ~ C$
+  - The eigenvalues and eigenvectors of similar matrices are the same.
+  - The trace of similar matrix is the same.
+
+### Transformation of linear transformation matrix under different bases
+
+$$
+A_Y = C^{-1} A_X C \quad ; Y = C X
+$$
+
+- Proof
+  $$
+  \begin{align*}
+    T Y &= Y A_Y     \tag{Define}\\ 
+    T X C &= X C A_Y   \tag{$ Y = X C $}\\
+    X A_X C &= X C A_Y   \tag{$ T X = X A_X $}\\
+    A_X C &= C A_Y  \\
+    A_Y &= C^{-1} A_X C
+  \end{align*}
+  $$
 
 ## Include
 
-### 恒等变换
+### Identity transformation
 
 - Define
   $$
   T x = x \quad ;(\forall x \in V)
   $$
 
-### 零变换
+### Zero transformation
 
 - Define  
   $$
@@ -242,7 +250,7 @@ $$
     \hat x = \sum_{i=1}^n \frac{u_i^T x}{u_i^T u_i} u_i
     $$
 
-### 斜切变换
+### Sheer transformation
 
 - Define  
   斜切变换矩阵:  

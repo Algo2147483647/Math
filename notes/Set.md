@@ -2,7 +2,14 @@
 
 [TOC]
 
-## Define  
+## Define
+
+$$
+\{\cdot\}
+$$
+
+
+
 A set $S$ is a collection of distinct objects.
 
 If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we write $x \notin S$.
@@ -107,46 +114,49 @@ If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we wri
 
 ### Operations
 
-* Intersection
-  - Define
-    $$
-    A \cap B = \{x \ |\ x \in A, x \in B\}  \tag{Intersection}
-    $$
+#### Intersection
 
-  - Property
-    - idempotency law: $A \cap A = A$
-    - commutative law: $A \cap B = B \cap A$  
-    - associative law: $A \cap (B \cap C) = (A \cap B) \cap C$
-
-* Union
-  - Define  
-    $$
-    A \cup B = \{x \ |\ x \in A \text{ or } x \in B \}  \tag{Union}
-    $$
-
-  - Property
-    - idempotency law: $A \cup A = A$
-    - commutative law: $A \cup B = B \cup A$  
-    - associative law: $A \cup (B \cup C) = (A \cup B) \cup C$
-  
-* Difference
-  - Define
-    $$
-    A - B = \{x \ |\ x \in A \text{ and } x \notin B\}  \tag{Difference}
-    $$
-
-* Complement of A Set
-  - Define  
-    $$
-    \bar A = U - A = \{x \ |\ x \in U, x \notin A\}  \tag{Complement of A Set}
-    $$
-
-    For a universal set $U$, the complement of a set $A$ is $U - A$.
-
-  - Property
-    - $\bar{\bar A} = A$ 
+- Define
+  $$
+  A \cap B = \{x \ |\ x \in A, x \in B\}  \tag{Intersection}
+  $$
 
 - Property
+  - idempotency law: $A \cap A = A$
+  - commutative law: $A \cap B = B \cap A$  
+  - associative law: $A \cap (B \cap C) = (A \cap B) \cap C$
+
+#### Union
+
+- Define  
+  $$
+  A \cup B = \{x \ |\ x \in A \text{ or } x \in B \}  \tag{Union}
+  $$
+
+- Property
+  - idempotency law: $A \cup A = A$
+  - commutative law: $A \cup B = B \cup A$  
+  - associative law: $A \cup (B \cup C) = (A \cup B) \cup C$
+
+#### Difference
+
+- Define
+  $$
+  A - B = \{x \ |\ x \in A \text{ and } x \notin B\}  \tag{Difference}
+  $$
+
+#### Complement of A Set
+
+- Define  
+  $$
+  \bar A = U - A = \{x \ |\ x \in U, x \notin A\}  \tag{Complement of A Set}
+  $$
+
+  For a universal set $U$, the complement of a set $A$ is $U - A$.
+
+- Property
+  - $\bar{\bar A} = A$ 
+
   - distributive laws 
     $$
     A \cap (B \cup C) = (A \cap B) \cup (A \cap C)
@@ -174,8 +184,6 @@ If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we wri
     $$
     \overline{A \cup B} = \bar A \cap \bar B
     $$
-
-
 
 ### Cartesian Product
 

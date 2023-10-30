@@ -5,7 +5,7 @@
 ## Define
 
 $$
-F(a, b;c;z) = \sum_{n=0}^\infty \frac{(a)_n (b)_n}{(c)_n} \frac{z^n}{n!}
+{}_pF_q(a_1, \cdots, a_p;b_1, \cdots, b_q;z) = \sum_{n=0}^\infty \frac{(a_1)_n (a_2)_n  \cdots (a_p)_n}{(b_1)_n (b_2)_n \cdots (b_q)_n} \frac{z^n}{n!}
 $$
 
 The hypergeometric function is defined for $|z| < 1$ by the power series. ([Complex Value Function](./Complex_Value_Function.md)) It is undefined (or infinite) if c equals a non-positive integer. Here (q)n is the (rising) Pochhammer symbol, which is defined by:
@@ -36,4 +36,3 @@ $$
   \arccos z &= z F(\frac{1}{2}, 1;\frac{3}{2};-z^2)  \\
   \end{align*}
   $$
-  

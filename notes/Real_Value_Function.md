@@ -8,9 +8,26 @@ $$
 f: \mathbb R \to \mathbb R
 $$
 
-A complex function $f: \mathbb R \to \mathbb R$ is a [function](./Function.md) from real numbers to real numbers.
+A real function $f: \mathbb R \to \mathbb R$ is a [function](./Function.md) from real numbers to real numbers.
+
+For multi-variate real functions:
+$$
+f: \mathbb R^n \to \mathbb R
+$$
 
 ## Property
+
+- Continuity: A function $f$ with variable $x$ is continuous at the real number $c$, if the limit of $f(a)$, as $x$ tends to $c$, is equal to $f(c)$. More formally, for any positive number $\epsilon > 0$, if there exists a positive number $\delta > 0$ such that whenever $|x - a| < \delta$, $|f(x) - f(a)| < \epsilon$, the function is said to be continuous at $a$.
+- Monotonicity
+- Boundedness
+- Differentiability: A function is said to be differentiable at a point $x = a$ if the following limit exists:
+$$
+f'(a) = \lim_{{h \to 0}} \frac{f(a + h) - f(a)}{h}
+$$
+- Periodicity: $f(x + T) = f(x)$.  The number $T$ is referred to as its period.
+- Odd and Even Properties
+  - Odd function: $f(-x) = -f(x)$
+  - Even function: $f(-x) = f(x)$
 
 ### Limitation
 
@@ -36,13 +53,13 @@ $$
     $$
     
 
-### Derivative
+### Derivative & Partial derivative
 
 - Define
   $$
   \begin{align*}
-    \frac{df}{dx} &= \lim_{Δx \to 0}  \frac{ f(x + Δx) - f(x - Δx) }{ 2 Δx }  \tag{First derivative}\\
-    \frac{d^n f}{dx^n} &= \lim_{Δx \to 0} \frac{ f^{(n - 1)}(x + Δx) - f^{(n - 1)}(x - Δx)} { 2 Δx }  \tag{$n$-order derivative}
+    \frac{\mathrm df}{\mathrm dx} &= \lim_{Δx \to 0}  \frac{ f(x + Δx) - f(x - Δx) }{ 2 Δx }  \tag{First derivative}\\
+    \frac{\mathrm d^n f}{\mathrm dx^n} &= \lim_{Δx \to 0} \frac{ f^{(n - 1)}(x + Δx) - f^{(n - 1)}(x - Δx)} { 2 Δx }  \tag{$n$-order derivative}
   \end{align*}
   $$
 
@@ -63,13 +80,29 @@ $$
 
 - Property
   - 线性性
+  
   - 乘法法则
-  - 链式法则
+  
+  - **Chain Rule**: for the function $z(x) = z(y(x))$, then 
+    $$
+    \frac{\mathrm d z}{\mathrm d x} = \frac{\mathrm d z}{\mathrm d y} \cdot \frac{\mathrm d y}{\mathrm d x}
+    $$
+  
+  - **L'Hôpital's Rule**: if $\lim\limits_{x \to a} f(x) =  \lim\limits_{x \to a} g(x) = 0  \text{ or } \infty$ and $g'(x) \neq 0, \forall x \in I \text{ with } x \neq a$, and $\lim\limits_{x \to a} \frac{f'(x)}{g'(x)}$ exists, then
+    $$
+    \lim\limits_{x \to a} \frac{f(x)}{g(x)} = \lim\limits_{x \to a} \frac{f'(x)}{g'(x)}
+    $$
+  
+  - **Taylor's theorem**: If a real-valued function $f(x)$ is differentiable at the point $x = a$, then 
+    $$
+    f(x) = f(a) + \sum_{i=1}^k \frac{f^{(i)}(a)}{i!}(x-a)^i + o(|x-a|^k)
+    $$
+  
 
 
 ### Gradient & Divergence & Curl
 
-- Define  
+- Define
   Gradient $\nabla (\cdot): (f: \mathbb R^{\dim} \to \mathbb R) \to (f: \mathbb R^{\dim} \to \mathbb R^{\dim})$, reflects the direction of the maximum rate of change for function $f$ at point $\boldsymbol x_0$.
   $$
   \nabla f = \sum_{i=1}^{\dim} \frac{∂f}{∂x_i} \hat{\boldsymbol x_i} = \left(\begin{matrix}\frac{∂f}{∂x_1} \\ \vdots \\ \frac{∂f}{∂x_{\dim}}\end{matrix}\right)  \tag{Gradient}
@@ -101,7 +134,7 @@ $$
   - $\nabla \cdot (\phi \boldsymbol F) = (\nabla \phi) \cdot \boldsymbol F + \phi (\nabla \cdot \boldsymbol F)$
   - $\nabla \times (\phi \boldsymbol F) = (\nabla \phi) \times \boldsymbol F + \phi (\nabla \times \boldsymbol F)$
 
-### Integral 
+### Integral
 
 - Define
 
@@ -110,13 +143,21 @@ $$
 $$
 Integral $f: (f: \mathbb R \to \mathbb R) \to (f: \mathbb R \to \mathbb R)$ represents the anti-derivative of a function $f(x)$. The indefinite integral of a function $f$ is a family of functions $F$ such that for all $x$ in the domain of $f$, $F'(x) = f(x)$. Where $const.$ is an arbitrary constant, reflecting the fact that the process of differentiation loses constant information.
 
-- Riemann Integra
+- Property
+
+  - Integration by part: for two continuously differentiable functions $u, v$, 
+    $$
+    \int u \mathrm d v = uv - \int v \mathrm d u
+    $$
+    
+### Riemann Integra
 
 $$
 \int_a^b f(x) \mathrm d x = F(b) - F(a) \tag{Definite Integral}
 $$
 
 Definite Integral $f: (\mathbb R, \mathbb R, f: \mathbb R \to \mathbb R) \to \mathbb R$ of a function f(x) over an interval $[a, b]$ is the limit of a sum of rectangular areas as the width of the rectangles approaches zero. 
+
 
 ### Kolmogorov-Arnold Representation Theorem  
 
@@ -128,33 +169,42 @@ Kolmogorov-Arnold representation theorem states that every multivariate continuo
 
 ## Problem
 
-### $Differential\ Equation$
+### Differential Equation
 
 #### Define
-$$f \left(x, y, \frac{\mathrm d y}{\mathrm d x}, \frac{\mathrm d^2 y}{\mathrm dx^2}, ..., \frac{\mathrm d^n y}{\mathrm d x^n} \right) = 0  \tag{ODE}$$ 
+$$
+f \left(x, y, \frac{\mathrm d y}{\mathrm d x}, \frac{\mathrm d^2 y}{\mathrm dx^2}, ..., \frac{\mathrm d^n y}{\mathrm d x^n} \right) = 0  \tag{ODE}
+$$
 Ordinary differential equation (ODE) is an equation that relates an unknown function $y$ to its derivatives with respect to a single independent variable $x$.  
 
-$$f \left(D^k u(x), ... , D^2 u(x), u(x), x \right) = 0  \tag{PDE}$$
-$$f: \mathbb R^{n^k} \times \mathbb R^{n^{k-1}} \times \mathbb R^n \times \mathbb R \times \Omega \to \mathbb R \quad; x \in \Omega; u: \Omega \to \mathbb R$$
+$$
+f \left(D^k u(x), ... , D^2 u(x), u(x), x \right) = 0  \tag{PDE}
+$$
+$$
+f: \mathbb R^{n^k} \times \mathbb R^{n^{k-1}} \times \mathbb R^n \times \mathbb R \times \Omega \to \mathbb R \quad; x \in \Omega; u: \Omega \to \mathbb R
+$$
 Partial differential equation (PDE) is an equation that relates an unknown function $u$ of two or more variables to its partial derivatives with respect to those variables.
 
-#### Algorithm: Solving Ordinary Differential Equation
+#### *Q: Solving Ordinary Differential Equation*
 
 * Runge Kutta Method   
   - Process 
     Ordinary differential equations  
-    $$\begin{align*}
+    $$
+    \begin{align*}
       \boldsymbol y' &= f(\boldsymbol  x, \boldsymbol  y)  \\
       \boldsymbol  y(\boldsymbol  x_0) &= \boldsymbol  y_0
-    \end{align*}$$
+    \end{align*}
+    $$
     Iterative solve Numerical solution for a point/interval of $\boldsymbol  y(x)$.
     $$\begin{align*}
       y(x + dx) &= y(x) + \frac{dx}{6} · (k_1 + 2 k_2 + 2 k_3 + k_4)  \\
       k_1 &= f \left(x_n , y_n \right)            \tag{Interval start slope}  \\
-      k_2 &= f \left(x_n + \frac{dx}{2}, y_n + \frac{dx}{2}·k_1 \right)    \tag{Interval midpoint slope, through the Euler method $k_1$ determines $y$ at $x_n+\frac{dx}{2}$}  \\
-      k_3 &= f \left(x_n + \frac{dx}{2}, y_n + \frac{dx}{2}·k_2 \right)    \tag{Interval midpoint slope,$k_2$ determines $y$ value}  \\
+      k_2 &= f \left(x_n + \frac{dx}{2}, y_n + \frac{dx}{2}·k_1 \right)   \\
+      k_3 &= f \left(x_n + \frac{dx}{2}, y_n + \frac{dx}{2}·k_2 \right)  \\
       k_4 &= f \left(x_n + dx, y_n + dx·k_3 \right)  \tag{Interval end slope}
-    \end{align*}$$
+    \end{align*}
+    $$
 
   - Property  
     The RK4 method is a fourth order method, with each step error of order $h^4$, and the total cumulative error of order $h^5$
