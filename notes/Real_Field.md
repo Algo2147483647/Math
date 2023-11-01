@@ -8,6 +8,17 @@ $$
 \mathbb R
 $$
 
+Real numbers is defined through the Dedekind cut of rational number sets $\mathbb Q$. The Dedekind cut is a pair of sets A and B that divide the rational number set $\mathbb Q$ into two parts, satisfying:
+
+- $A \neq \empty, A \neq \mathbb Q$
+- if $p, q \in \mathbb Q, p < q, q \in A$, then $p \in A$. 
+- No maximum element in $A$, if $q \in A$, then there must be $p \in \mathbb Q, p > q$, let $p \in A$.
+
+
+Each Dedekind cut defines a real number: if the cut represents a rational number, it is that rational number, otherwise it is an irrational number.
+
+
+
 The set of real numbers, denoted $\mathbb{R}$, together with the operations of addition and multiplication, is called the [field](./Field.md) of real numbers if the following axioms are satisfied:
 
 **Field Axioms**:

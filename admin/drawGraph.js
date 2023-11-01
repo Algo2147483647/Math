@@ -87,16 +87,19 @@ function bfs(root) {
 }
 
 function draw(svg, node, position, visited) {
+    const radius = 8;
+    
     node.kid.forEach(kidName => {
         const child = dag[kidName];
-        const key = `${node.name}-${kidName}`;
-        if (!visited.has(key)) {
-            visited.add(key);
-            drawEdge(svg, 
-                position[node.name][0], 
-                position[node.name][1], 
-                position[child.name][0], 
-                position[child.name][1]);
+
+        drawEdge(svg, 
+            position[node.name][0] + radius, 
+            position[node.name][1], 
+            position[child.name][0] - radius, 
+            position[child.name][1]);
+
+        if (!visited.has(kidName)) {
+            visited.add(kidName);
             draw(svg, child, position, visited);
         }
     });
@@ -138,6 +141,7 @@ function drawNode(svg, x, y, node_name, node_url) {
 function drawEdge(svg, x1, y1, x2, y2) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     const d = `M ${x1} ${y1} C ${(x1 + x2) / 2} ${y1} ${(x1 + x2) / 2} ${y2} ${x2} ${y2}`;
+
     path.setAttribute("d", d);
     path.setAttribute("stroke", "#8888FF");
     path.setAttribute("fill", "none");

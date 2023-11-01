@@ -8,7 +8,7 @@ $$
 f: \mathbb R \to \mathbb R
 $$
 
-A real function $f: \mathbb R \to \mathbb R$ is a [function](./Function.md) from real numbers to real numbers.
+A real function $f: \mathbb R \to \mathbb R$ is a [function](./Function.md) from [real numbers](./Real_Field.md) to real numbers.
 
 For multi-variate real functions:
 $$

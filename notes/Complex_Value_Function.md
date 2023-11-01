@@ -8,7 +8,7 @@ $$
 f: \mathbb C \to \mathbb C
 $$
 
-A complex function $f: \mathbb C \to \mathbb C$ is a [function](./Function.md) from complex numbers to complex numbers.
+A complex function $f: \mathbb C \to \mathbb C$ is a [function](./Function.md) from [complex numbers](./Complex_Field.md) to complex numbers.
 
 ## Property
 

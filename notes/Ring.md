@@ -31,6 +31,16 @@ Ring is an algebraic structure, where $G$ is a set, $\cdot$ and $+$ are binary o
 - Property
   - Quotient Ring
 
+### Polynomial Ring
+
+The polynomial ring $K[x]$ in $x$ over a field (or, more generally, a commutative ring) $K$ defined as the set of all polynomials in the variable $x$ with coefficients $p_i \in K$ and a non-negative integer $n$ (representing the degree of the polynomial). 
+$$
+f(x) = p_{0}+p_{1}x+p_{2}x^{2}+\cdots +p_{n}x^{n}
+$$
+
+- **Addition**: $g(x) + f(x)$ is the polynomial whose coefficient of $x_i$ is $a_i + b_i$ for each $i$.
+- **Multiplication**: Given two polynomials $f, g$, their product $f \cdot g$ is computed using the distributive property.
+
 ## Include
 
 ### Commutative Ring

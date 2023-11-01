@@ -8,7 +8,7 @@ $$
 y^2 = x^3 + a x + b
 $$
 
-An elliptic curve over a field $K$ is defined by an equation of the form as above. where $a, b$ are elements in $K$, and the discriminant $ \Delta = -16(4a^3 - 27b^2) \neq 0$. The non-vanishing of the discriminant ensures that the curve has no singularities (i.e., no cusps or self-intersections). ([Cubic Function](./Polynomial_Function.md))
+An elliptic curve over a field $K$ is defined by an equation of the form as above. where $a, b$ are elements in $K$, and the discriminant $ \Delta = -16(4a^3 - 27b^2) \neq 0$. The non-vanishing of the discriminant ensures that the curve has no singularities (i.e., no cusps or self-intersections). ([Cubic Function](./Cubic_Function.md))
 
 <img src="assets/EllipticCurveCatalog.svg" alt="EllipticCurveCatalog" style="zoom: 33%;" />
 

@@ -7,4 +7,4 @@ Hilbert Space, is the Intersection of [Complete Metric Space](./Metric_Space.md)
 
 ## Include 
 
-* Euclidean Space
+* [Euclidean Space](./Euclidean_Space.md)
