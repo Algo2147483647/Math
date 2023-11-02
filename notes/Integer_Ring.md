@@ -1,6 +1,15 @@
 # $Integer\ Ring$
 [TOC]
 ## Define
+
+$$
+\mathbb Z
+$$
+
+An **integer** can be defined as an equivalence class of ordered pairs of natural numbers $(a, b)$, where $a$ and $b$ are [natural numbers](./Natural_Number.md), under the following equivalence relation:
+
+- Two ordered pairs $(a, b)$ and $(c, d)$ are considered equivalent if and only if $a + d = b + c$. (the difference between two natural numbers)
+
 $$
 (\mathbb Z, +, \cdot)
 $$
@@ -8,6 +17,12 @@ $$
 \forall a, b \in \mathbb Z, a \cdot b = 0 \quad\Rightarrow\quad  (a = 0 \vee b = 0)  \tag{no zero divisor}
 $$
 Integral ring is a nonzero commutative [ring](./Ring.md) in which the product of any two nonzero elements is nonzero.
+
+- **Addition:** To add two integers represented by $[a, b]$ and $[c, d]$, define their sum as $[a + c, b + d]$. This is equivalent to adding the two 'positive' parts and the two 'negative' parts separately.
+  
+- **Negation:** The negation of an integer represented by $[a, b]$ is $[b, a]$, reflecting the idea of $ -(a - b) = b - a $.
+  
+- **Multiplication:** To multiply two integers represented by $[a, b]$ and $[c, d]$, define their product as $[ac + bd, ad + bc]$. This captures the distributive property over the components of the ordered pairs.
 
 ## Property
 

@@ -8,7 +8,7 @@ $$
 \mathbb{Q} = \left\{ \frac{a}{b} \mid a, b \in \mathbb{Z} \text{ and } b \neq 0 \right\}
 $$
 
-Rational number field is a [field](./Field.md) of rational numbers is the set of all numbers that can be expressed as the quotient of two integers, where the denominator is not zero. 
+Rational number field is a [field](./Field.md) of rational numbers is the set of all numbers that can be expressed as the quotient of two [integers](./Integer_Ring.md), where the denominator is not zero. 
 
 - Addition and Multiplication are Closed
   $$

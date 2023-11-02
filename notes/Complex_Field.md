@@ -8,7 +8,7 @@ $$
 \mathbb C
 $$
 
-The set of complex numbers, denoted $\mathbb{C}$, consists of all ordered pairs of real numbers $(a, b)$. Each such number is usually written as $a + bi$, where $a$ is called the real part, $b$ is called the imaginary part, and $i$ is the imaginary unit with the property that $i^2 = -1$.
+The set of complex numbers, denoted $\mathbb{C}$, consists of all ordered pairs of [real numbers](./Real_Field.md) $(a, b)$. Each such number is usually written as $a + bi$, where $a$ is called the real part, $b$ is called the imaginary part, and $i$ is the imaginary unit with the property that $i^2 = -1$.
 $$
 \mathbb C = \{a + b i \ |\ a, b \in \mathbb R ,i^2  = 1\}
 $$

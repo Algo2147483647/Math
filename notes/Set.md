@@ -10,9 +10,19 @@ $$
 
 
 
-A set $S$ is a collection of distinct objects.
+A set $S$ is a collection of distinct objects. 
 
-If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we write $x \notin S$.
+If an object $x$ is a member of a set $S$, we write $x \in S$. Otherwise, we write $x \notin S$. The most commonly used axiomatic system for set theory is Zermelo-Fraenkel set theory with the Axiom of Choice (ZFC axiomatic system):
+
+1. **Axiom of Extensionality**: Two sets are equal if they have the same elements.
+2. **Axiom of Regularity (also known as the Axiom of Foundation)**: Every non-empty set has a member that is disjoint from it. $\empty$
+3. **Axiom of Pairing**: For any two sets, there is a set that contains exactly those two sets.
+4. **Axiom of Union**: For any set of sets, there is a set that contains all the elements of those sets.
+5. **Axiom of Infinity**: There exists a set that contains the empty set and is closed under the operation of "successor" which is defined for any set $x$ as $x \cup \{x\}$.
+6. **Axiom Schema of Separation (also known as the Axiom Schema of Comprehension)**: For any set and any property that can be defined without reference to the whole set, there is a subset containing exactly those elements of the original set that have the property.
+7. **Axiom of Power Set**: For any set, there is a set of all its subsets.
+8. **Axiom Schema of Replacement**: If a property defines a function on a set, then the image of the set under that function is also a set.
+9. **Axiom of Choice**: For any set of non-empty sets, there exists a choice function that selects one element from each set.
 
 ## Property
 

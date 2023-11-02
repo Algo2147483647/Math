@@ -8,7 +8,7 @@ $$
 \mathbb R
 $$
 
-Real numbers is defined through the Dedekind cut of rational number sets $\mathbb Q$. The Dedekind cut is a pair of sets A and B that divide the rational number set $\mathbb Q$ into two parts, satisfying:
+Real numbers is defined through the Dedekind cut of rational number sets $\mathbb Q$. The Dedekind cut is a pair of sets A and B that divide the [rational number](./Rational_Number_Field.md) set $\mathbb Q$ into two parts, satisfying:
 
 - $A \neq \empty, A \neq \mathbb Q$
 - if $p, q \in \mathbb Q, p < q, q \in A$, then $p \in A$. 
