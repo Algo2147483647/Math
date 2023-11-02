@@ -1,4 +1,4 @@
-# $Quaternion$
+# $Quaternion\ Ring$
 
 ## Define
 
@@ -6,7 +6,7 @@ $$
 q = a + b i + c j + d k
 $$
 
-Quaternion number system extends the complex numbers. Where $a, b, c, d \in \mathbb R$ are real numbers, and $i, j, k$ are symbols that can be interpreted as unit-vectors pointing along the three spatial axes. The multiplication rules for the basis elements are:
+Quaternion number system extends the complex numbers. Where $a, b, c, d \in \mathbb R$ are [real numbers](./Real_Field.md), and $i, j, k$ are symbols that can be interpreted as unit-vectors pointing along the three spatial axes. (Quaternion [Ring](./Ring.md)) The multiplication rules for the basis elements are:
 $$
 i^2 = j^2 = k^2 = ijk = -1
 $$

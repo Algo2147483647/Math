@@ -6,7 +6,7 @@ $$
 \mathbb N
 $$
 
-Natural numbers are formally defined by the Peano axioms, which are a set of axioms that describe the properties of natural numbers.
+Natural numbers are formally defined by the Peano axioms, which are a set of axioms that describe the properties of natural numbers. ([Set](./Set.md))
 
 - $0$ is a natural number.
 - Every natural number has a successor in the natural numbers.
