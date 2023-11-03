@@ -185,30 +185,6 @@ f: \mathbb R^{n^k} \times \mathbb R^{n^{k-1}} \times \mathbb R^n \times \mathbb 
 $$
 Partial differential equation (PDE) is an equation that relates an unknown function $u$ of two or more variables to its partial derivatives with respect to those variables.
 
-#### *Q: Solving Ordinary Differential Equation*
-
-* Runge Kutta Method   
-  - Process 
-    Ordinary differential equations  
-    $$
-    \begin{align*}
-      \boldsymbol y' &= f(\boldsymbol  x, \boldsymbol  y)  \\
-      \boldsymbol  y(\boldsymbol  x_0) &= \boldsymbol  y_0
-    \end{align*}
-    $$
-    Iterative solve Numerical solution for a point/interval of $\boldsymbol  y(x)$.
-    $$\begin{align*}
-      y(x + dx) &= y(x) + \frac{dx}{6} · (k_1 + 2 k_2 + 2 k_3 + k_4)  \\
-      k_1 &= f \left(x_n , y_n \right)            \tag{Interval start slope}  \\
-      k_2 &= f \left(x_n + \frac{dx}{2}, y_n + \frac{dx}{2}·k_1 \right)   \\
-      k_3 &= f \left(x_n + \frac{dx}{2}, y_n + \frac{dx}{2}·k_2 \right)  \\
-      k_4 &= f \left(x_n + dx, y_n + dx·k_3 \right)  \tag{Interval end slope}
-    \end{align*}
-    $$
-
-  - Property  
-    The RK4 method is a fourth order method, with each step error of order $h^4$, and the total cumulative error of order $h^5$
-
 #### Include
 
 ##### Linear Differential Equation

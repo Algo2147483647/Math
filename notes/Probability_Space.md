@@ -19,7 +19,7 @@ Probability Space is a [measure space](./Measurable_Space.md) including,
 - Define
   $$\mathbb P: \mathcal F \to [0, 1]  \tag{Probability}$$
   
-  Probability is a set function, a measure of a set, and satisfies:
+  Probability is a set function, a measure of a set, and satisfies (Kolmogorov axiomatization):
 
   - Nonnegativity $\mathbb P(A) \in [0, 1] \quad ; \forall A \in F$
   - Normative $\mathbb P(Ω) = 1$

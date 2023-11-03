@@ -16,6 +16,16 @@ A complex function $f: \mathbb C \to \mathbb C$ is a [function](./Function.md) f
 
   Let $U$ be an open set in the complex plane $\mathbb C$ and let $f : U \to \mathbb C$ be a function. The function ,is said to be analytic (or holomorphic) on $U$ if for every $z_0 \in U$, there exists an open disk $D$ centered at $z_0$ such that $f$ is differentiable at every point in $D$.
 
+### Residue & Residue Theorem
+$$
+\operatorname{Res}(f,a)  \tag{Residue}
+$$
+$$
+\oint_C f(z)\,\mathrm{d}z=2\pi i\sum_{k=1}^n \operatorname{Res}(f,a_k)  \tag{Residue Theorem}
+$$
+
+For an analytic function $f(z)$ on an open set $D$ and a simple closed curve $C$ that encircles counterclockwise all the isolated singularities $a_1,a_2,\ldots,a_n$ of $f(z)$, then the integral of $f(z)$ along $C$ can be expressed as the sum of the residues of $f(z)$ at these singularities. And $\operatorname{Res}(f,a_k)$ denotes the residue of $f(z)$ at the point $a_k$.
+
 ## Include
 
 ### Analytic Function
@@ -52,14 +62,6 @@ A complex function $f: \mathbb C \to \mathbb C$ is a [function](./Function.md) f
 - Define  
   A meromorphic function on an open subset $D$ of the complex plane is a function that is holomorphic on all of $D$ except for a set of isolated points, which are poles of the function.
 
-- Property 
-  * Residue & Residue Theorem
-    $$
-    \operatorname{Res}(f,a)  \tag{Residue}
-    $$
-    $$
-    \oint_C f(z)\,\mathrm{d}z=2\pi i\sum_{k=1}^n \operatorname{Res}(f,a_k)  \tag{Residue Theorem}
-    $$
-    
-    For an analytic function $f(z)$ on an open set $D$ and a simple closed curve $C$ that encircles counterclockwise all the isolated singularities $a_1,a_2,\ldots,a_n$ of $f(z)$, then the integral of $f(z)$ along $C$ can be expressed as the sum of the residues of $f(z)$ at these singularities. And $\operatorname{Res}(f,a_k)$ denotes the residue of $f(z)$ at the point $a_k$.
+
+
 
