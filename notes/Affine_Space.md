@@ -8,7 +8,7 @@ $$
 (\mathcal{A}, V, \phi)
 $$
 
-Let $V$ be a vector space over a field $K$. An affine space $\mathcal{A}$ over $V$ is a non-empty [set](./Set.md) of elements called points together with a function
+Let $V$ be a [vector space](./Linear_Space.md) over a field $K$. An affine space $\mathcal{A}$ over $V$ is a non-empty set of elements called points together with a function
 
 $$
 \phi: V \times \mathcal{A} \rightarrow \mathcal{A}
@@ -29,64 +29,55 @@ that associates to each point $p \in \mathcal{A}$ and each vector $v \in V$ a po
 
 ### Affine Set
 
-- Define  
+- Define
   Affine Set is a set such that the lines drawn by any two points in the set are still in the set.  
 
 $$
 \forall \boldsymbol x_i \in C, θ_i \in R, \sum θ_i = 1 \quad \text{, then}\quad \sum θ_i x_i \in C
 $$
 
-- Affine Hull
-  - Define  
-    $$
-    \text{aff}(C) = \left\{\sum θ_i x_i\ |\ x_i\in C,theta_i \in R, \sum θ_i = 1  \right\}
-    $$
-    Affine Hull is a set such that affine combinations of all points in the set constitutes an affine hull.
+- Property
 
+  - Affine Hull
 
-### Convex Set
-
-- Define  
-  $$
-  \forall \boldsymbol x_i \in C, θ_i \in [0,1], \sum θ_i = 1 \quad \text{, then}\quad \sum θ_i x_i \in C
-  $$
-
-  A convex set is a set such that the line segment between any two points in the set is still in the set.
-
-- Property  
-
-  - Convex Set $C$的任意边界点, 均存在支撑超平面.
-
-  * Convex Hull
     - Define  
       $$
-      \text{conv}(C) = \left\{\sum θ_i x_i\ |\ x_i\in C, θ_i \in [0,1], \sum θ_i = 1 \right\}
+      \text{aff}(C) = \left\{\sum θ_i x_i\ |\ x_i\in C,theta_i \in R, \sum θ_i = 1  \right\}
       $$
-
-      A convex hull is a set of points is the smallest convex polygon that contain all the input points.
-
-      The set of convex combinations of all points in the set constitutes a convex hull This convex hull is also the smallest Convex Set containing all points in a given set.
-
-      $$
-      \mathcal X_{\text{Convex\ Hull}} \subseteq \mathcal X_{\text{input}}
-      $$
-      $$
-      \mathcal X_{\text{input}} \subseteq \text{Polygon}(\mathcal X_{\text{Convex\ Hull}})
-      $$
+      Affine Hull is a set such that affine combinations of all points in the set constitutes an affine hull.
 
 - Include
 
-  - Hyperplane & Half-Space
-    - Define  
+  - Convex Set
+
+    - Define
       $$
-      \begin{align*}
-        \{\boldsymbol x \ |\ \boldsymbol a^T \boldsymbol x = b\}  \tag{Hyperplane}\\
-        \{\boldsymbol x \ |\ \boldsymbol a^T \boldsymbol x ≤ b\}  \tag{Half-Space}
-      \end{align*}
+      \forall \boldsymbol x_i \in C \subseteq \mathbb R^n, a_i \in [0,1], \sum a_i = 1 \quad \text{, then}\quad \sum a_i x_i \in C
       $$
 
+      A convex set $C$ is a set such that the line segment between any two points in the set is still in the set. Convex sets are a special class of [affine sets](./Affine_Space.md).
+
     - Property
-      - Hyperplane & Half-Space is Convex Set
+
+      - Convex Set $C$的任意边界点, 均存在支撑超平面.
+
+      - Convex Hull
+        $$
+          \text{conv}(C) = \left\{\sum θ_i x_i\ |\ x_i\in C, θ_i \in [0,1], \sum θ_i = 1 \right\}
+        $$
+
+          A convex hull is a set of points is the smallest convex polygon that contain all the input points.
+
+          The set of convex combinations of all points in the set constitutes a convex hull This convex hull is also the smallest Convex Set containing all points in a given set.
+
+        $$
+          \mathcal X_{\text{Convex\ Hull}} \subseteq \mathcal X_{\text{input}}
+        $$
+        $$
+        \mathcal X_{\text{input}} \subseteq \text{Polygon}(\mathcal X_{\text{Convex\ Hull}})
+        $$
+
+
 
 ### Cone
 - Define  
@@ -103,3 +94,16 @@ $$
     $$
 
 ### [Polyhedron](./Polyhedron.md)
+
+### Hyperplane & Half Space
+
+- Define
+  $$
+  \begin{align*}
+    \{\boldsymbol x \ |\ \boldsymbol a^T \boldsymbol x = b\}  \tag{Hyperplane}\\
+    \{\boldsymbol x \ |\ \boldsymbol a^T \boldsymbol x ≤ b\}  \tag{Half-Space}
+  \end{align*}
+  $$
+
+- Property
+  - Hyperplane & Half-Space is Convex Set

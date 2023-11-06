@@ -134,8 +134,6 @@ $$
 
 * [Bipartite Graph](./Bipartite_Graph.md)
 
-* [Linked List](./Linked_List.md)
-
 ## Problem
 
 ### Traversal
