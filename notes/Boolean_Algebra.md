@@ -2,23 +2,24 @@
 
 [TOC]
 
-## Define   
+## Define
 
-Boolean Algebra is a [Lattice](./Algebra_Structure.md) including value and its operators,
+Boolean Algebra is a [Lattice](./Lattice.md) including value and its operators,
 $$
 (\{0, 1\}, \neg, \wedge, \vee)
 $$
 
 The value of boolean algebra belongs to $\{\text{true}, \text{false}\}$, usually denoted $\{1, 0\}$. The basic operations of boolean algebra include $\neg, \wedge, \vee$.
 
-- NOT $\neg$  
+- NOT $\neg$
   NOT is a unary operator.
+  
   |$a$|$\neg a$|
   |---|---|
   | 0 | 0 |
   | 1 | 1 |
-
-- AND $\wedge$, OR $\vee$  
+  
+- AND $\wedge$, OR $\vee$
   AND, OR are two binary operators.  
   
   |$a$|$b$|$a \wedge b$|$a \vee b$|

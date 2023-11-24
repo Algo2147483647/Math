@@ -17,16 +17,6 @@ An automorphism is simply a bijective homomorphism of a mathematical object with
 
 ### [Ring](./Ring.md)
 
-### Lattice 
+### [Lattice](./Lattice.md)
 
-- Define
-- Example
-  * Boolean Algebra  
 
-### Module
-
-- Define
-  $$(\mathbb R, S, +, \cdot)$$  
-  
-- Example
-  * Linear Space

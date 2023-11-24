@@ -25,7 +25,7 @@ Logical connective can be used to connect logical formulas.
 - Conjunction (and) $\wedge$
 - Disjunction (or) $\vee$
 - Implication (if...then) $\rightarrow$
-- Equivalence (if and only if) $\leftrightarrow$
+- Equivalence (if and only if, iff) $\leftrightarrow$
 
 <img src="assets/Logical_connectives_Hasse_diagram.svg" alt="Logical_connectives_Hasse_diagram" style="zoom: 33%;" />
 
@@ -43,19 +43,19 @@ Logical connective can be used to connect logical formulas.
 
 Predicates are symbols or expressions used to describe object attributes or relationships between objects.
 
-- $P (x), Q (x), R (x), \cdots$: Predicate, usually representing an object with a certain property, where x is a variable
+- **Predicate** $P (x), Q (x), R (x), \cdots$: usually representing an object with a certain property, where $x$ is a variable
 
-- $a, b, c, \cdots$: Constants, representing specific individuals or objects
+- **Constants** $a, b, c, \cdots$: representing specific individuals or objects
 
-- $x, y, z, \cdots$: Variable, used to represent any individual or object
+- Variable $x, y, z, \cdots$: used to represent any individual or object
 
 #### Quantifier
 
 Quantifier specify the quantity of specimens in the domain of discourse that satisfy a certain property. 
 
-- Universal quantifier (for all) $\forall$
-- Existential quantifier (there exists) $\exists$ 
-  - Uniqueness quantifier (there is only one) $\exists_{=1}$
+- **Universal quantifier** (for all) $\forall$
+- **Existential quantifier** (there exists) $\exists$ 
+  - **Uniqueness quantifier** (there is only one) $\exists_{=1}$
 
 
 ### Axiomatic system
