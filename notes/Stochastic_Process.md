@@ -3,7 +3,7 @@
 [TOC]
 
 ## Define  
-A Stochastic Process $X(t, \omega), \omega \in \Omega, t \in T$ is defined as a collection of random variables defined on a Probability Space $(Ω, \mathcal F, P)$, and these random variables indexed by set $T$.
+A Stochastic Process $X(t, \omega), \omega \in \Omega, t \in T$ is defined as a collection of random variables defined on a [Probability Space](./Probability_Space.md) $(Ω, \mathcal F, P)$, and these random variables indexed by set $T$.
 
 - Note
   - When the time $t$ is fixed, the random process degenerates into a random variable.
