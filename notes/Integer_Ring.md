@@ -26,31 +26,37 @@ Integral ring is a nonzero commutative [ring](./Ring.md) in which the product of
 
 ## Property
 
-* Division with Remainder & Factor
-* Multiplicative Function
-  - Define  
-    A mapping $f: \mathbb Z \to \mathbb R$, such that
-    $$
-    f(a \times b) = f(a) f(b) \quad \text{when}\ a, b \in \mathbb Z, gcd(a, b) = 1
-    $$
+### Division with Remainder & Factor
 
-  - Property
-    - $f(1) = 1$
+### Multiplicative Function
 
-  - Example
-    * Eular Function
-      - Define  
-        The number of coprimes with $n$ in positive integers less than $n$.
-        $$
-        \phi(n) = \text{number}(\{i\ |\ i \in 1:n, \text{GCD}(i, n) = 1\})
-        $$
+- Define  
+  A mapping $f: \mathbb Z \to \mathbb R$, such that
+  $$
+  f(a \times b) = f(a) f(b) \quad \text{when}\ a, b \in \mathbb Z, gcd(a, b) = 1
+  $$
 
-      - Property
-        $$
-        \begin{align*}
-          n &= \prod_i p_i^{k_i}  \\
-          \phi(n) &= n \prod_{p|n} (1 - 1/p)  
-        \end{align*}
-        $$
+- Property
+  - $f(1) = 1$
 
-    * [Möbius Function](./Mobius_Function.md)
+- Example
+  * Eular Function
+    - Define  
+      The number of coprimes with $n$ in positive integers less than $n$.
+      $$
+      \phi(n) = \text{number}(\{i\ |\ i \in 1:n, \text{GCD}(i, n) = 1\})
+      $$
+
+    - Property
+      $$
+      \begin{align*}
+        n &= \prod_i p_i^{k_i}  \\
+        \phi(n) &= n \prod_{p|n} (1 - 1/p)  
+      \end{align*}
+      $$
+
+  * [Möbius Function](./Mobius_Function.md)
+
+### Fermat's Last Theorem
+
+No three positive integers $a, b, c$ satisfy the equation $a^n + b^n = c^n$ for any integer value of $n$ greater than $2$. The cases $n = 1$ and $n = 2$ have been known since antiquity to have infinitely many solutions.

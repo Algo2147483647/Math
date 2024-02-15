@@ -39,13 +39,50 @@ Where $p$ is a prime and $a$ is an any integer that is not a multiple of $p$.
       \Rightarrow \quad \frac{a}{b} \mod p \equiv a \times b^{p-2} \mod p
       $$
 
+  ### Goldbach's Conjecture
   
+  every even natural number greater than 2 is the sum of two prime numbers.
+  $$
+  \forall n \in \mathbb{Z}^+ \, (\, n > 2 \, \land \, \text{even}(n) \, ) \, \exists \, p, q \in \text{Primes} \, (\, n = p + q \, )
+  $$
 
-### *Q: Resolving prime factor*  
+
+## Include
+
+### Mersenne Prime
+
+- Define 
+  $$
+  M_n = 2^n - 1  \tag{Mersenne number}
+  $$
+  Mersenne Prime is a prime number that is one less than a power of two.
+
+- Property
+  - example of mersenne primes
+    |n|value|
+    |:---:|---:|
+    |2|3|
+    |3|7|
+    |5|31|
+    |7|127|
+    |13|8191| 
+    |17|131071| 
+    |19|524287| 
+    |31|2147483647| 
+    |61|2305843009213693951| 
+    |89|618970019642690137449562111| 
+    |107|162259276829213363391578010288127| 
+    |127|170141183460469231731687303715884105727| 
+    ||| 
+
+## Problem
+
+
+### Resolving prime factor
 
 - Pollard Rho algorithm
 
-### *Q: Filter Prime Number from a range of numbers?*
+### Filter Prime Number from a range of numbers
 
 * Euler's Sieve
   - Purpose
@@ -76,31 +113,3 @@ Where $p$ is a prime and $a$ is an any integer that is not a multiple of $p$.
                   break
       return primes
     ```
-
-## Include
-
-### Mersenne Prime
-
-- Define 
-  $$
-  M_n = 2^n - 1  \tag{Mersenne number}
-  $$
-  Mersenne Prime is a prime number that is one less than a power of two.
-
-- Property
-  - example of mersenne primes
-    |n|value|
-    |:---:|---:|
-    |2|3|
-    |3|7|
-    |5|31|
-    |7|127|
-    |13|8191| 
-    |17|131071| 
-    |19|524287| 
-    |31|2147483647| 
-    |61|2305843009213693951| 
-    |89|618970019642690137449562111| 
-    |107|162259276829213363391578010288127| 
-    |127|170141183460469231731687303715884105727| 
-    ||| 
