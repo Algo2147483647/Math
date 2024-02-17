@@ -28,8 +28,20 @@ Ring is an algebraic structure, where $G$ is a set, $\cdot$ and $+$ are binary o
 
 - Define
 
+  Let $R$ be a ring and $I$ be a subring of $R$, if $\forall i \in I, \forall r \in R$, $i\cdot r = r \cdot i \in I$,  we call $I$ is the ideal subring of $R$.
+
 - Property
   - Quotient Ring
+
+- Include
+
+  - Prime Ideal
+
+    An ideal $I$ of a commutative ring $R$ is called a prime ideal if, whenever the product of two elements $a, b \in R$ is an element of $I$, at least one of $a$ or $b$ is in $I$. Symbolically, if $I$ is a prime ideal and $ab \in I$, then either $a \in I$ or $b \in I$.
+
+  - Maximal Ideal
+
+    An ideal $I$ of a ring $R$ is called a maximal ideal if it is a proper ideal (i.e., $I \neq R$) and there are no other proper ideals properly containing $I$. In other words, there does not exist another ideal $J$ such that $I \subsetneq J \subsetneq R$.
 
 ### Polynomial Ring
 

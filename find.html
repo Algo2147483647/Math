@@ -60,7 +60,10 @@
                 if (regex.test(line)) {
                     const row = table.insertRow();
                     const fileCell = row.insertCell(0);
-                    fileCell.textContent = fileUrl;
+                    const fileLink = document.createElement('a');
+                    fileLink.href = fileUrl;
+                    fileLink.textContent = fileUrl;
+                    fileCell.appendChild(fileLink);
                     const lineNumberCell = row.insertCell(1);
                     lineNumberCell.textContent = index + 1;
                     const textCell = row.insertCell(2);

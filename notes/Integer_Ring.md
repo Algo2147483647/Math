@@ -1,7 +1,8 @@
-# $Integer\ Ring$
+# $Ring\ of\ Integers$
 [TOC]
 ## Define
 
+Ring of Integers is a kind of Integral Domain (整环).
 $$
 \mathbb Z
 $$
