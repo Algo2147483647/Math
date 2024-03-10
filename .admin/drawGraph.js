@@ -1,7 +1,7 @@
 let dag = {};
 
 // Load data (assuming it's stored in a file named `dag.json`)
-fetch('./admin/cellLib.json').then(response => response.json()).then(data => {
+fetch('./.admin/cellLib.json').then(response => response.json()).then(data => {
     dag = data;
 });
 

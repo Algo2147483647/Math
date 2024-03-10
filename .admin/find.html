@@ -17,7 +17,7 @@
     <div id="searchResults"></div>
 
     <script>
-        fetch('./admin/cellLib.json').then(response => response.text()).then(data => {
+        fetch('./cellLib.json').then(response => response.text()).then(data => {
             files = new Set();
             const urlRegex = /"url"\s*:\s*"([^"]+)"/g;
             let match;
@@ -27,7 +27,6 @@
         });
 
         async function searchFiles() {
-            const folderUrl = "./notes/";
             const keyword = document.getElementById('searchInput').value;
             const searchResultsElement = document.getElementById('searchResults');
             searchResultsElement.innerHTML = ''; // Clear previous results
@@ -51,6 +50,7 @@
         }
 
         async function searchInFile(fileUrl, keyword, table) {
+            fileUrl = '.' + fileUrl
             const response = await fetch(fileUrl);
             const text = await response.text();
             const lines = text.split('\n');

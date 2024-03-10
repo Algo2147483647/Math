@@ -15,12 +15,18 @@
 <body>
     <div id="svg-container"></div>
 
-    <script src="./admin/drawGraph.js"></script>
+    <script src="./.admin/drawGraph.js"></script>
     <script>
         window.onload = function() {
             setTimeout(function() {
                 drawDAG("");
             }, 100); 
+
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'F' || event.key === 'f') {
+                    window.open('./.admin/find.html', '_blank');
+                }
+            });
         }
     </script>
 </body>
