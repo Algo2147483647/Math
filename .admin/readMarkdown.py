@@ -37,7 +37,7 @@ def readMarkdown(file_path):
         for link in links:
             name_tmp = link.split("/")[-1].replace(".md", "")
             if name_tmp not in cellLib:
-                cellLib[name_tmp] = Cell(name_tmp, file_path.replace('../', './'))
+                cellLib[name_tmp] = Cell(name_tmp, link.replace('./', './notes/'))
 
             if define_section and link in define_section:
                 cellLib[file_name].parent.add(name_tmp)
