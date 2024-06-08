@@ -2,7 +2,10 @@
 
 [TOC]
 
-## Define  
+## Define
+
+In a [metric space](./Metric_Space.md) $(M, d)$, an open set $A$ is a set that, if $\forall a \in A$, there $\exists\epsilon > 0$ such that $\forall b \in M$ satisfying $d(x, y) < \epsilon$, then $b \in A$.
+
 Topological space $\tau$ is a collection of subsets of $S$, that is subsets of [power set](./Power_Set.md) $P(S)$, called the Open Sets, that satisfy certain axioms,
 
 - The empty set and $S$ itself belong to $\tau$.
