@@ -3,6 +3,8 @@
 [TOC]
 
 ## Define
+
+Laplace Transform $f: (f: \mathbb C \to \mathbb C) \times \mathbb C \to \mathbb C$
 $$
 \mathcal L_{f(t)}(s) = \int_0^{\infty} f(t) e^{-st} \mathrm d t
 $$
@@ -18,7 +20,7 @@ A type of [function](./Function.md)
 ### Fourier Transform
 
 - Define  
-  Fourier Transform is a function $f: ((f:\mathbb R \to \mathbb R) \times \mathbb R) \to \mathbb R$. Fourier Transform represents the original function $f(x)$ by a set of basis composed of trigonometric functions $e^{-\mathrm i 2 \pi x f}$ through calculate the inner product between them.
+  Fourier Transform is a function $f: (f:\mathbb R \to \mathbb R) \times \mathbb R \to \mathbb R$. Fourier Transform represents the original function $f(x)$ by a set of basis composed of trigonometric functions $e^{-\mathrm i 2 \pi x f}$ through calculate the inner product between them.
   $$
   \begin{align*}
   \mathcal F(f(t)) &= F(\omega) = \int_{-\infty}^{\infty} f(x) e^{-\mathrm i \omega x} \mathrm d x  \tag{Fourier transform}\\
@@ -58,3 +60,14 @@ A type of [function](./Function.md)
   $$
   c_{jk} =  W_{\phi, f}(2^{-j}, k 2^{-j})
   $$
+
+### Z-Transform
+
+- Define
+
+  Z-transform $f: (f: \mathbb Z \to \mathbb C) \times \mathbb C \to \mathbb C$ converts a sequence of real or complex numbers, into a complex valued frequency-domain (the z-domain or z-plane) representation.
+  $$
+  X(z) = \mathcal Z(x[n]) = \sum_{n=-\infty}^{\infty} x[n]z^{-n}
+  $$
+  
+

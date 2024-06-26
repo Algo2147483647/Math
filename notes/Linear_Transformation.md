@@ -20,7 +20,7 @@ $$
 \boldsymbol A = (T(\boldsymbol e_1), ..., T(\boldsymbol e_n))
 $$
 
-- Proof  
+- Proof
   We assume $\boldsymbol A = (T(\boldsymbol e_1), ..., T(\boldsymbol e_n))$, then 
 
   Proof $T(\boldsymbol e_i) = \boldsymbol A \boldsymbol e_i$, 

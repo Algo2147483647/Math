@@ -26,6 +26,15 @@ $$
 
 For an analytic function $f(z)$ on an open set $D$ and a simple closed curve $C$ that encircles counterclockwise all the isolated singularities $a_1,a_2,\ldots,a_n$ of $f(z)$, then the integral of $f(z)$ along $C$ can be expressed as the sum of the residues of $f(z)$ at these singularities. And $\operatorname{Res}(f,a_k)$ denotes the residue of $f(z)$ at the point $a_k$.
 
+### Laurent Series
+
+The Laurent series for a complex function $f(z)$ about a point $c$ is given by
+$$
+f(z) = \sum^{\infty}_{n=-\infty} a_n(z-c)^n\\
+a_n = \frac{1}{2\pi i} \oint_\gamma \frac{f(z)}{(z-c)^{n+1}}\mathrm{d}z
+$$
+The path of integration $\gamma$ is counterclockwise around a Jordan curve enclosing $c$ and lying in an annulus $A$ in which $f(z)$ is holomorphic (analytic). The expansion for $f(z)$ will then be valid anywhere inside the annulus.
+
 ## Include
 
 ### Analytic Function
@@ -39,7 +48,7 @@ For an analytic function $f(z)$ on an open set $D$ and a simple closed curve $C$
 
 ### Holomorphic Function
 
-- Define  
+- Define
   A holomorphic function is a complex-valued function on an open set $U$ if it is complex differentiable at every point of $U$.
 
 - Property
@@ -61,7 +70,6 @@ For an analytic function $f(z)$ on an open set $D$ and a simple closed curve $C$
 
 - Define  
   A meromorphic function on an open subset $D$ of the complex plane is a function that is holomorphic on all of $D$ except for a set of isolated points, which are poles of the function.
-
 
 
 
