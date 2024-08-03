@@ -1,4 +1,4 @@
-# Complex Field 
+# $Complex\ Field$
 
 [TOC]
 
